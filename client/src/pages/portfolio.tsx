@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useTheme } from "@/components/theme-provider";
 import { motion, useScroll, useSpring, useInView, AnimatePresence } from "framer-motion";
 import {
@@ -31,6 +32,8 @@ import {
   ChevronDown,
   Quote,
   Sparkles,
+  Map,
+  DollarSign,
 } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import profileImage from "@assets/1708862676484-2_1770641756175.jpeg";
@@ -367,7 +370,7 @@ function StatsBar() {
         <motion.div variants={fadeUp} className="grid grid-cols-2 sm:grid-cols-4 gap-8">
           <AnimatedCounter target={10} label="Years Leading" suffix="+" />
           <AnimatedCounter target={50} label="Engineers Hired" suffix="+" />
-          <AnimatedCounter target={3} label="Teams Built" />
+          <AnimatedCounter target={5} label="Teams Built" />
           <AnimatedCounter target={99} label="Uptime Target" suffix="%" />
         </motion.div>
       </motion.div>
@@ -463,6 +466,7 @@ function AboutSection() {
 
 function ExpertiseSection() {
   const [activeTab, setActiveTab] = useState("01");
+  const [openRoadmap, setOpenRoadmap] = useState<string | null>(null);
 
   const expertiseData = [
     {
@@ -485,6 +489,64 @@ function ExpertiseSection() {
         "Created a reusable playbook for standing up high-performing, framework-specific teams",
       ],
       skills: ["Ruby on Rails", "Go", "React", "Team Building", "Talent Strategy", "Technical Hiring", "Agile Delivery", "Code Quality"],
+      roadmap: {
+        phases: [
+          {
+            title: "Phase 1: Assessment & Strategy (Weeks 1-4)",
+            activities: [
+              "Conduct comprehensive team assessment across Ruby on Rails, Go, and React stacks",
+              "Analyze current hiring pipeline, interview processes, and technical standards",
+              "Identify gaps in team structure, skills distribution, and delivery cadence",
+              "Define target team composition and hiring roadmap for each technology stack",
+            ],
+          },
+          {
+            title: "Phase 2: Hiring & Onboarding (Weeks 5-16)",
+            activities: [
+              "Establish structured hiring pipeline with stack-specific technical assessments",
+              "Design and implement onboarding programs tailored to Ruby on Rails, Go, and React",
+              "Create role-specific competency frameworks and career progression paths",
+              "Build mentorship programs to accelerate time-to-productivity",
+            ],
+          },
+          {
+            title: "Phase 3: Standards & Processes (Weeks 17-24)",
+            activities: [
+              "Establish coding standards, review processes, and best practices for each stack",
+              "Implement consistent sprint cadence and delivery workflows across teams",
+              "Create security, testing, and production readiness frameworks",
+              "Set up metrics and KPIs to track team performance and delivery velocity",
+            ],
+          },
+          {
+            title: "Phase 4: Optimization & Scale (Weeks 25+)",
+            activities: [
+              "Continuously refine hiring and onboarding processes based on data",
+              "Scale successful practices across additional teams and projects",
+              "Build reusable playbooks for standing up new framework-specific teams",
+              "Establish culture of continuous improvement and knowledge sharing",
+            ],
+          },
+        ],
+        valueAdditions: [
+          {
+            metric: "30-50%",
+            description: "Reduction in time-to-first-commit for new engineers through structured onboarding",
+          },
+          {
+            metric: "40-60%",
+            description: "Improvement in deployment frequency with established delivery cadence",
+          },
+          {
+            metric: "25-35%",
+            description: "Increase in team productivity through optimized processes and standards",
+          },
+          {
+            metric: "50-70%",
+            description: "Faster hiring cycles with streamlined, stack-specific interview processes",
+          },
+        ],
+      },
     },
     {
       number: "02",
@@ -506,6 +568,64 @@ function ExpertiseSection() {
         "Enabled product teams to deploy independently without platform bottlenecks",
       ],
       skills: ["Platform Engineering", "IDP Design", "Infrastructure as Code", "CI/CD", "Observability", "Cloud Architecture"],
+      roadmap: {
+        phases: [
+          {
+            title: "Phase 1: Foundation & Charter (Weeks 1-6)",
+            activities: [
+              "Define platform engineering team charter, mission, and success metrics",
+              "Assess current infrastructure, tooling, and developer pain points",
+              "Design internal developer platform (IDP) architecture and technology stack",
+              "Establish service level objectives (SLOs) and reliability targets",
+            ],
+          },
+          {
+            title: "Phase 2: Core Platform Build (Weeks 7-20)",
+            activities: [
+              "Build self-service infrastructure provisioning and deployment pipelines",
+              "Implement standardized CI/CD workflows and golden paths",
+              "Create infrastructure-as-code templates and reusable components",
+              "Set up comprehensive observability, monitoring, and alerting systems",
+            ],
+          },
+          {
+            title: "Phase 3: Developer Enablement (Weeks 21-32)",
+            activities: [
+              "Launch self-service tooling and developer portals",
+              "Create documentation, runbooks, and best practice guides",
+              "Onboard initial product teams and gather feedback",
+              "Iterate on platform capabilities based on developer needs",
+            ],
+          },
+          {
+            title: "Phase 4: Scale & Optimize (Weeks 33+)",
+            activities: [
+              "Scale platform to serve all product teams across the organization",
+              "Continuously optimize infrastructure costs and resource utilization",
+              "Expand platform capabilities based on evolving requirements",
+              "Establish platform engineering as a strategic competitive advantage",
+            ],
+          },
+        ],
+        valueAdditions: [
+          {
+            metric: "80-90%",
+            description: "Reduction in infrastructure provisioning time through self-service tooling",
+          },
+          {
+            metric: "60-75%",
+            description: "Decrease in deployment failures with standardized CI/CD pipelines",
+          },
+          {
+            metric: "50-70%",
+            description: "Reduction in time-to-production for new services and applications",
+          },
+          {
+            metric: "30-50%",
+            description: "Cost savings through optimized infrastructure and resource management",
+          },
+        ],
+      },
     },
     {
       number: "03",
@@ -527,6 +647,64 @@ function ExpertiseSection() {
         "Built a culture of continuous improvement with visible, shared metrics",
       ],
       skills: ["DORA Metrics", "Developer Experience", "Process Optimization", "Engineering Analytics", "Build Systems", "Change Management"],
+      roadmap: {
+        phases: [
+          {
+            title: "Phase 1: Baseline & Analysis (Weeks 1-6)",
+            activities: [
+              "Implement DORA metrics tracking (deployment frequency, lead time, MTTR, change failure rate)",
+              "Conduct comprehensive developer experience surveys and interviews",
+              "Identify bottlenecks across the software development lifecycle",
+              "Quantify impact of inefficiencies on developer productivity and business outcomes",
+            ],
+          },
+          {
+            title: "Phase 2: Quick Wins (Weeks 7-16)",
+            activities: [
+              "Optimize build and test cycle times through parallelization and caching",
+              "Reduce feedback loop time with faster CI/CD pipelines",
+              "Eliminate common friction points in developer workflows",
+              "Implement developer experience improvements with highest ROI",
+            ],
+          },
+          {
+            title: "Phase 3: Systematic Improvements (Weeks 17-32)",
+            activities: [
+              "Invest in tooling and automation to reduce manual overhead",
+              "Streamline code review processes and reduce cycle times",
+              "Improve documentation, knowledge sharing, and onboarding",
+              "Establish continuous improvement culture with visible metrics dashboards",
+            ],
+          },
+          {
+            title: "Phase 4: Continuous Optimization (Weeks 33+)",
+            activities: [
+              "Monitor and track DORA metrics trends over time",
+              "Iterate on improvements based on developer feedback and data",
+              "Scale successful practices across the entire engineering organization",
+              "Maintain culture of continuous improvement and innovation",
+            ],
+          },
+        ],
+        valueAdditions: [
+          {
+            metric: "40-60%",
+            description: "Reduction in lead time for changes through optimized workflows",
+          },
+          {
+            metric: "50-70%",
+            description: "Decrease in build and test cycle times with targeted optimizations",
+          },
+          {
+            metric: "2-3x",
+            description: "Increase in deployment frequency with improved CI/CD and processes",
+          },
+          {
+            metric: "30-40%",
+            description: "Improvement in developer satisfaction scores through DX enhancements",
+          },
+        ],
+      },
     },
   ];
 
@@ -639,7 +817,7 @@ function ExpertiseSection() {
                         </div>
 
                         <div className="mt-6 pt-6 border-t">
-                          <div className="flex flex-wrap gap-2">
+                          <div className="flex flex-wrap gap-2 mb-6">
                             {item.skills.map((skill, i) => (
                               <motion.div
                                 key={skill}
@@ -653,6 +831,14 @@ function ExpertiseSection() {
                               </motion.div>
                             ))}
                           </div>
+                          <Button
+                            onClick={() => setOpenRoadmap(item.number)}
+                            className="w-full sm:w-auto"
+                            variant="outline"
+                          >
+                            <Map className="w-4 h-4 mr-2" />
+                            View Contribution Roadmap
+                          </Button>
                         </div>
                       </CardContent>
                     </Card>
@@ -663,6 +849,93 @@ function ExpertiseSection() {
           </Tabs>
         </motion.div>
       </motion.div>
+
+      {/* Roadmap Dialog */}
+      {expertiseData.map((item) => (
+        <Dialog
+          key={item.number}
+          open={openRoadmap === item.number}
+          onOpenChange={(open) => setOpenRoadmap(open ? item.number : null)}
+        >
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="flex items-center gap-2">
+                <item.icon className="w-5 h-5 text-primary" />
+                {item.title} - Contribution Roadmap
+              </DialogTitle>
+              <DialogDescription>
+                A strategic roadmap showing how I will contribute to your organization in this area of expertise
+              </DialogDescription>
+            </DialogHeader>
+
+            <div className="space-y-8 mt-4">
+              {/* Roadmap Phases */}
+              <div>
+                <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                  <Target className="w-5 h-5 text-primary" />
+                  Implementation Roadmap
+                </h3>
+                <div className="space-y-6">
+                  {item.roadmap.phases.map((phase, phaseIndex) => (
+                    <motion.div
+                      key={phaseIndex}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: phaseIndex * 0.1 }}
+                      className="relative pl-6 border-l-2 border-primary/20"
+                    >
+                      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-2 border-background" />
+                      <h4 className="font-semibold text-base mb-3 text-foreground">{phase.title}</h4>
+                      <ul className="space-y-2">
+                        {phase.activities.map((activity, activityIndex) => (
+                          <li key={activityIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <ArrowRight className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                            <span>{activity}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              <Separator />
+
+              {/* Value Additions */}
+              <div>
+                <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                  <DollarSign className="w-5 h-5 text-primary" />
+                  Expected Value Additions
+                </h3>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {item.roadmap.valueAdditions.map((value, valueIndex) => (
+                    <motion.div
+                      key={valueIndex}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: valueIndex * 0.1 + 0.5 }}
+                    >
+                      <Card className="hover-elevate">
+                        <CardContent className="p-4">
+                          <div className="flex items-start gap-3">
+                            <div className="flex items-center justify-center w-10 h-10 rounded-md bg-primary/10 shrink-0">
+                              <TrendingUp className="w-5 h-5 text-primary" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <p className="text-2xl font-bold text-primary mb-1">{value.metric}</p>
+                              <p className="text-sm text-muted-foreground">{value.description}</p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
+      ))}
     </section>
   );
 }
