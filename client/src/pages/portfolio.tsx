@@ -34,6 +34,9 @@ import {
   Sparkles,
   Map,
   DollarSign,
+  FileText,
+  Download,
+  ExternalLink,
 } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import profileImage from "@assets/1708862676484-2_1770641756175.jpeg";
@@ -1073,9 +1076,9 @@ function ContactSection() {
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
         variants={stagger}
-        className="max-w-3xl mx-auto text-center relative z-10"
+        className="max-w-4xl mx-auto relative z-10"
       >
-        <motion.div variants={fadeUp}>
+        <motion.div variants={fadeUp} className="text-center mb-12">
           <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
             Connect
           </p>
@@ -1088,26 +1091,78 @@ function ContactSection() {
           </p>
         </motion.div>
 
-        <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-center gap-3">
-          <Button asChild data-testid="link-email">
-            <a href="mailto:mcmuralishclint@outlook.com">
-              <Mail className="w-4 h-4 mr-2" />
-              Email Me
-            </a>
-          </Button>
-          <Button variant="outline" asChild data-testid="link-linkedin">
-            <a href="https://linkedin.com/in/mcmuralishclint" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="w-4 h-4 mr-2" />
-              LinkedIn
-            </a>
-          </Button>
-          <Button variant="outline" asChild data-testid="link-github">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-              <SiGithub className="w-4 h-4 mr-2" />
-              GitHub
-            </a>
-          </Button>
-        </motion.div>
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {/* Contact Buttons */}
+          <motion.div variants={fadeUp}>
+            <Card className="overflow-visible hover-elevate h-full">
+              <CardContent className="p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-md bg-primary/10 shrink-0">
+                    <Mail className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold">Get in Touch</h3>
+                </div>
+                <p className="text-sm text-muted-foreground mb-6">
+                  Reach out via email or connect with me on professional networks.
+                </p>
+                <div className="flex flex-col gap-3">
+                  <Button asChild className="w-full" data-testid="link-email">
+                    <a href="mailto:mcmuralishclint@outlook.com">
+                      <Mail className="w-4 h-4 mr-2" />
+                      Email Me
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild className="w-full" data-testid="link-linkedin">
+                    <a href="https://linkedin.com/in/mcmuralishclint" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="w-4 h-4 mr-2" />
+                      LinkedIn
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild className="w-full" data-testid="link-github">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                      <SiGithub className="w-4 h-4 mr-2" />
+                      GitHub
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Resume Download */}
+          <motion.div variants={fadeUp}>
+            <Card className="overflow-visible hover-elevate h-full">
+              <CardContent className="p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-md bg-primary/10 shrink-0">
+                    <FileText className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold">Download Resume</h3>
+                </div>
+                <p className="text-sm text-muted-foreground mb-6">
+                  Get a detailed overview of my experience, skills, and achievements in a downloadable format.
+                </p>
+                <div className="flex flex-col gap-3">
+                  <Button asChild size="lg" className="w-full">
+                    <a href="/resume.pdf" download="Muralish_Clinton_Resume.pdf">
+                      <Download className="w-4 h-4 mr-2" />
+                      Download PDF
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild size="lg" className="w-full">
+                    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      View in New Tab
+                    </a>
+                  </Button>
+                </div>
+                <p className="text-xs text-muted-foreground mt-4 text-center">
+                  Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
       </motion.div>
       
       {/* Gradient fade to footer */}
