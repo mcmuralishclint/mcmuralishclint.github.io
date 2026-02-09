@@ -778,13 +778,13 @@ function ContactSection() {
 
         <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-center gap-3">
           <Button asChild data-testid="link-email">
-            <a href="mailto:muralish.clinton@example.com">
+            <a href="mailto:mcmuralishclint@outlook.com">
               <Mail className="w-4 h-4 mr-2" />
               Email Me
             </a>
           </Button>
           <Button variant="outline" asChild data-testid="link-linkedin">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/in/mcmuralishclint" target="_blank" rel="noopener noreferrer">
               <Linkedin className="w-4 h-4 mr-2" />
               LinkedIn
             </a>
