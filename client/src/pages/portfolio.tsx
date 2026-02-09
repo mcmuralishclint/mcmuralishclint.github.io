@@ -242,7 +242,7 @@ function NavBar() {
 
 function HeroSection() {
   const typingText = useTypingEffect([
-    "Ruby on Rails Teams",
+    "High-Performing Engineering Teams",
     "Platform Engineering",
     "Developer Efficiency",
   ], 70, 40, 2200);
@@ -400,12 +400,12 @@ function AboutSection() {
               expertise with a keen understanding of business objectives, ensuring that every
               team I build and every platform I architect directly drives organizational success.
             </p>
-            <p className="text-base leading-relaxed text-muted-foreground">
-              I thrive in environments where there is ambiguity and complexity. Whether it's
-              assembling a Ruby on Rails team to deliver critical products, designing platform
-              engineering organizations, or systematically improving developer productivity,
-              I bring a structured, outcome-focused methodology to every challenge.
-            </p>
+          <p className="text-base leading-relaxed text-muted-foreground">
+            I thrive in environments where there is ambiguity and complexity. Whether it's
+            building high-performing engineering teams across Ruby on Rails, Go, and React,
+            designing platform engineering organizations, or systematically improving developer
+            productivity, I bring a structured, outcome-focused methodology to every challenge.
+          </p>
             <p className="text-base leading-relaxed text-muted-foreground">
               My leadership philosophy centers on empowering engineers, creating scalable
               processes, and fostering a culture of continuous improvement that compounds
@@ -467,24 +467,24 @@ function ExpertiseSection() {
   const expertiseData = [
     {
       number: "01",
-      title: "Building a Ruby on Rails Team",
-      subtitle: "From Zero to a High-Performing Product Team",
+      title: "Building High-Performing Engineering Teams",
+      subtitle: "Ruby on Rails, Go, and React Delivery Organizations",
       icon: GitBranch,
       description:
-        "Built a Ruby on Rails engineering team from scratch, establishing the hiring pipeline, technical standards, and delivery cadence needed to ship production-grade applications. This involved defining role competencies, structuring interviews for Rails-specific depth, and creating an onboarding program that accelerated time-to-first-commit.",
+        "Built high-performing engineering teams around Ruby on Rails, Go, and React, establishing the hiring pipeline, technical standards, and delivery cadence needed to ship production-grade applications. This included defining role competencies by technology, structuring interviews for framework- and language-specific depth, and creating onboarding programs that accelerated time-to-first-commit across stacks.",
       challenges: [
-        { icon: Users, text: "Talent strategy and hiring pipeline for Rails engineers" },
-        { icon: Code2, text: "Establishing coding standards, review processes, and best practices" },
-        { icon: Workflow, text: "Sprint cadence, delivery workflows, and agile ceremonies" },
-        { icon: Shield, text: "Security, testing culture, and production readiness" },
+        { icon: Users, text: "Talent strategy and hiring pipeline for Rails, Go, and React engineers" },
+        { icon: Code2, text: "Establishing coding standards, review processes, and best practices across stacks" },
+        { icon: Workflow, text: "Sprint cadence, delivery workflows, and agile ceremonies for cross-functional teams" },
+        { icon: Shield, text: "Security, testing culture, and production readiness across services and frontends" },
       ],
       outcomes: [
-        "Assembled a productive Rails team capable of full-cycle delivery",
-        "Reduced average onboarding time with structured ramp-up programs",
-        "Established a consistent deployment rhythm with reliable releases",
-        "Created a reusable playbook for standing up framework-specific teams",
+        "Assembled productive, cross-functional teams capable of full-cycle delivery across Ruby on Rails, Go, and React",
+        "Reduced average onboarding time with structured, stack-aware ramp-up programs",
+        "Established a consistent deployment rhythm with reliable releases across multiple services and applications",
+        "Created a reusable playbook for standing up high-performing, framework-specific teams",
       ],
-      skills: ["Ruby on Rails", "Team Building", "Talent Strategy", "Technical Hiring", "Agile Delivery", "Code Quality"],
+      skills: ["Ruby on Rails", "Go", "React", "Team Building", "Talent Strategy", "Technical Hiring", "Agile Delivery", "Code Quality"],
     },
     {
       number: "02",
