@@ -353,19 +353,24 @@ function HeroSection() {
           </motion.button>
         </motion.div>
       </motion.div>
+      
+      {/* Gradient fade to stats bar */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/90 to-transparent pointer-events-none" />
     </section>
   );
 }
 
 function StatsBar() {
   return (
-    <section className="py-16 px-6 border-y bg-card/30">
+    <section className="relative py-16 px-6 border-y overflow-hidden">
+      {/* Subtle background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-card/30 to-primary/5 pointer-events-none" />
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
         variants={stagger}
-        className="max-w-4xl mx-auto"
+        className="max-w-4xl mx-auto relative z-10"
       >
         <motion.div variants={fadeUp} className="grid grid-cols-2 sm:grid-cols-4 gap-8">
           <AnimatedCounter target={10} label="Years Leading" suffix="+" />
@@ -380,13 +385,19 @@ function StatsBar() {
 
 function AboutSection() {
   return (
-    <section id="about" className="py-24 px-6">
+    <section id="about" className="relative py-24 px-6 overflow-hidden">
+      {/* Gradient fade from hero */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background via-background/80 to-transparent pointer-events-none" />
+      
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-primary/5 pointer-events-none" />
+      
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
         variants={stagger}
-        className="max-w-5xl mx-auto"
+        className="max-w-5xl mx-auto relative z-10"
       >
         <motion.div variants={fadeUp} className="text-center mb-16">
           <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">Background</p>
@@ -460,6 +471,9 @@ function AboutSection() {
           </motion.div>
         </div>
       </motion.div>
+      
+      {/* Gradient fade to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-muted/30 via-muted/10 to-transparent pointer-events-none" />
     </section>
   );
 }
@@ -711,13 +725,19 @@ function ExpertiseSection() {
   const activeData = expertiseData.find((d) => d.number === activeTab)!;
 
   return (
-    <section id="expertise" className="py-24 px-6">
+    <section id="expertise" className="relative py-24 px-6 overflow-hidden">
+      {/* Gradient fade from previous section */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-muted/30 via-muted/10 to-transparent pointer-events-none" />
+      
+      {/* Subtle background accent */}
+      <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-primary/2 to-primary/4 pointer-events-none" />
+      
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
         variants={stagger}
-        className="max-w-5xl mx-auto"
+        className="max-w-5xl mx-auto relative z-10"
       >
         <motion.div variants={fadeUp} className="text-center mb-12">
           <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
@@ -934,8 +954,11 @@ function ExpertiseSection() {
               </div>
             </div>
           </DialogContent>
-        </Dialog>
+          </Dialog>
       ))}
+      
+      {/* Gradient fade to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-card/50 via-card/30 to-transparent pointer-events-none" />
     </section>
   );
 }
@@ -969,13 +992,20 @@ function ApproachSection() {
   ];
 
   return (
-    <section id="approach" className="py-24 px-6 bg-card/50">
+    <section id="approach" className="relative py-24 px-6 overflow-hidden">
+      {/* Gradient fade from previous section */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-card/50 via-card/30 to-transparent pointer-events-none" />
+      
+      {/* Background with subtle pattern */}
+      <div className="absolute inset-0 bg-gradient-to-br from-card/60 via-card/40 to-card/60 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(var(--primary),0.05),transparent_50%)] pointer-events-none" />
+      
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
         variants={stagger}
-        className="max-w-5xl mx-auto"
+        className="max-w-5xl mx-auto relative z-10"
       >
         <motion.div variants={fadeUp} className="text-center mb-16">
           <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
@@ -1022,19 +1052,28 @@ function ApproachSection() {
           ))}
         </div>
       </motion.div>
+      
+      {/* Gradient fade to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none" />
     </section>
   );
 }
 
 function ContactSection() {
   return (
-    <section id="contact" className="py-24 px-6">
+    <section id="contact" className="relative py-24 px-6 overflow-hidden">
+      {/* Gradient fade from previous section */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background via-background/80 to-transparent pointer-events-none" />
+      
+      {/* Subtle background accent */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-primary/4 via-transparent to-primary/3 pointer-events-none" />
+      
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
         variants={stagger}
-        className="max-w-3xl mx-auto text-center"
+        className="max-w-3xl mx-auto text-center relative z-10"
       >
         <motion.div variants={fadeUp}>
           <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
@@ -1070,6 +1109,9 @@ function ContactSection() {
           </Button>
         </motion.div>
       </motion.div>
+      
+      {/* Gradient fade to footer */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-border/50 to-transparent pointer-events-none" />
     </section>
   );
 }
