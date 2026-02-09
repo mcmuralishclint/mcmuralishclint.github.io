@@ -4,6 +4,11 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
+  // Use a relative base so the app works when served from a sub-path
+  // (e.g. GitHub Pages project sites like /your-repo-name/).
+  // If you later host at a custom domain or the root pages site,
+  // this will still work.
+  base: "./",
   plugins: [
     react(),
     runtimeErrorOverlay(),
