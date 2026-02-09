@@ -467,7 +467,7 @@ function ExpertiseSection() {
   const expertiseData = [
     {
       number: "01",
-      title: "Building High-Performing Engineering Teams",
+      title: "High-Performing Engineering Teams",
       subtitle: "Ruby on Rails, Go, and React Delivery Organizations",
       icon: GitBranch,
       description:
