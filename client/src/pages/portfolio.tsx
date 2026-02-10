@@ -37,6 +37,15 @@ import {
   FileText,
   Download,
   ExternalLink,
+  Trophy,
+  Server,
+  Cpu,
+  Signal,
+  ShoppingCart,
+  UserPlus,
+  Network,
+  BookOpen,
+  Filter,
 } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import profileImage from "@assets/1708862676484-2_1770641756175.jpeg";
@@ -124,7 +133,7 @@ function AnimatedCounter({ target, label, suffix = "" }: { target: number; label
 
   return (
     <div ref={ref} className="text-center">
-      <p className="text-3xl sm:text-4xl font-bold text-primary font-mono" data-testid={`text-counter-${label.toLowerCase().replace(/\s+/g, '-')}`}>
+      <p className="text-3xl sm:text-4xl font-bold font-mono gradient-text" data-testid={`text-counter-${label.toLowerCase().replace(/\s+/g, '-')}`}>
         {count}{suffix}
       </p>
       <p className="text-sm text-muted-foreground mt-1">{label}</p>
@@ -138,8 +147,11 @@ function ScrollProgress() {
 
   return (
     <motion.div
-      className="fixed top-14 left-0 right-0 h-0.5 bg-primary origin-left z-50"
-      style={{ scaleX }}
+      className="fixed top-14 left-0 right-0 h-0.5 origin-left z-50"
+      style={{
+        scaleX,
+        background: "linear-gradient(90deg, hsl(245 58% 52%), hsl(200 80% 50%), hsl(173 60% 40%))",
+      }}
       data-testid="scroll-progress"
     />
   );
@@ -200,6 +212,7 @@ function NavBar() {
   const navItems = [
     { label: "About", id: "about" },
     { label: "Expertise", id: "expertise" },
+    { label: "Stories", id: "stories" },
     { label: "Approach", id: "approach" },
     { label: "Contact", id: "contact" },
   ];
@@ -259,21 +272,34 @@ function HeroSection() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center pt-14 overflow-hidden">
+      {/* Mesh gradient background */}
+      <div className="absolute inset-0 mesh-gradient pointer-events-none" />
+      
+      {/* Animated floating orbs — multi-color */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
-          animate={{ x: [0, 20, 0], y: [0, -15, 0] }}
+          animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 -left-32 w-[28rem] h-[28rem] bg-primary/5 rounded-full blur-3xl"
+          className="absolute top-1/4 -left-32 w-[28rem] h-[28rem] rounded-full blur-3xl"
+          style={{ background: "radial-gradient(circle, hsl(245 58% 52% / 0.12), hsl(200 80% 50% / 0.06))" }}
         />
         <motion.div
-          animate={{ x: [0, -20, 0], y: [0, 15, 0] }}
+          animate={{ x: [0, -25, 0], y: [0, 20, 0] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-1/4 -right-32 w-96 h-96 bg-primary/8 rounded-full blur-3xl"
+          className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full blur-3xl"
+          style={{ background: "radial-gradient(circle, hsl(173 60% 40% / 0.12), hsl(200 80% 50% / 0.05))" }}
         />
         <motion.div
-          animate={{ x: [0, 10, 0], y: [0, 20, 0] }}
+          animate={{ x: [0, 15, 0], y: [0, 25, 0] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[36rem] h-[36rem] bg-primary/3 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[36rem] h-[36rem] rounded-full blur-3xl"
+          style={{ background: "radial-gradient(circle, hsl(280 55% 55% / 0.08), hsl(245 58% 52% / 0.04))" }}
+        />
+        <motion.div
+          animate={{ x: [0, -10, 0], y: [0, -15, 0] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[15%] right-[20%] w-64 h-64 rounded-full blur-3xl"
+          style={{ background: "radial-gradient(circle, hsl(340 65% 50% / 0.06), transparent)" }}
         />
       </div>
 
@@ -285,7 +311,7 @@ function HeroSection() {
       >
         <motion.div variants={scaleIn} className="mb-8 flex justify-center">
           <div className="relative">
-            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-primary/20">
+            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden gradient-border glow">
               <img
                 src={profileImage}
                 alt="Muralish Clinton"
@@ -296,9 +322,10 @@ function HeroSection() {
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-1 -right-1 w-8 h-8 bg-primary rounded-full flex items-center justify-center"
+              className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center"
+              style={{ background: "linear-gradient(135deg, hsl(245 58% 52%), hsl(200 80% 50%))" }}
             >
-              <Sparkles className="w-4 h-4 text-primary-foreground" />
+              <Sparkles className="w-4 h-4 text-white" />
             </motion.div>
           </div>
         </motion.div>
@@ -311,7 +338,7 @@ function HeroSection() {
 
         <motion.h1
           variants={fadeUp}
-          className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6"
+          className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6 gradient-text"
           data-testid="text-hero-name"
         >
           Muralish Clinton
@@ -366,8 +393,8 @@ function HeroSection() {
 function StatsBar() {
   return (
     <section className="relative py-16 px-6 border-y overflow-hidden">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-card/30 to-primary/5 pointer-events-none" />
+      {/* Multi-hue background gradient */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(90deg, hsl(245 58% 52% / 0.06), hsl(200 80% 50% / 0.04), hsl(173 60% 40% / 0.06))" }} />
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -392,8 +419,8 @@ function AboutSection() {
       {/* Gradient fade from hero */}
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background via-background/80 to-transparent pointer-events-none" />
       
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-primary/5 pointer-events-none" />
+      {/* Multi-hue background pattern */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, hsl(245 58% 52% / 0.04), transparent 40%, hsl(173 60% 40% / 0.05))" }} />
       
       <motion.div
         initial="hidden"
@@ -732,8 +759,8 @@ function ExpertiseSection() {
       {/* Gradient fade from previous section */}
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-muted/30 via-muted/10 to-transparent pointer-events-none" />
       
-      {/* Subtle background accent */}
-      <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-primary/2 to-primary/4 pointer-events-none" />
+      {/* Multi-hue background accent */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(225deg, transparent 20%, hsl(200 80% 50% / 0.03) 50%, hsl(245 58% 52% / 0.05))" }} />
       
       <motion.div
         initial="hidden"
@@ -945,7 +972,7 @@ function ExpertiseSection() {
                               <TrendingUp className="w-5 h-5 text-primary" />
                             </div>
                             <div className="flex-1 min-w-0">
-                              <p className="text-2xl font-bold text-primary mb-1">{value.metric}</p>
+                              <p className="text-2xl font-bold gradient-text mb-1">{value.metric}</p>
                               <p className="text-sm text-muted-foreground">{value.description}</p>
                             </div>
                           </div>
@@ -962,6 +989,227 @@ function ExpertiseSection() {
       
       {/* Gradient fade to next section */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-card/50 via-card/30 to-transparent pointer-events-none" />
+    </section>
+  );
+}
+
+type StoryCategory = "all" | "dev" | "architecture" | "leadership";
+
+function StoriesSection() {
+  const [activeFilter, setActiveFilter] = useState<StoryCategory>("all");
+
+  const stories = [
+    {
+      category: "dev" as const,
+      title: "E-Commerce Platform from Scratch",
+      subtitle: "Series D Organization",
+      icon: ShoppingCart,
+      description:
+        "Built and owned end-to-end e-commerce systems from the ground up for a Series D organization. Designed the architecture, led implementation across the full stack, and delivered a scalable platform that handled the growing demands of a rapidly expanding customer base.",
+      highlight: "Full ownership from architecture to production",
+      tags: ["E-Commerce", "Full Stack", "System Design", "Scalable Architecture"],
+    },
+    {
+      category: "dev" as const,
+      title: "5G & Roaming Features",
+      subtitle: "25% Annual Revenue Increase",
+      icon: Signal,
+      description:
+        "Engineered roaming and 5G features for a telecom platform, directly contributing to a 25% annual revenue increase. Worked across complex protocol layers and integrations with carrier partners to deliver features that expanded the product's market reach.",
+      highlight: "25% annual revenue increase",
+      tags: ["5G", "Roaming", "Telecom", "Revenue Growth"],
+    },
+    {
+      category: "dev" as const,
+      title: "Prepaid Flow for Postpaid Market",
+      subtitle: "5,000+ New Customers Monthly",
+      icon: UserPlus,
+      description:
+        "Created a prepaid billing and onboarding flow for a traditionally postpaid market, opening up an entirely new customer segment. The system enabled acquisition of 5,000+ new customers per month, unlocking significant recurring revenue in an untapped segment.",
+      highlight: "5,000+ new customer acquisitions monthly",
+      tags: ["Billing Systems", "Customer Acquisition", "Market Expansion", "Product Innovation"],
+    },
+    {
+      category: "architecture" as const,
+      title: "Platform Engineering IDP",
+      subtitle: "Internal Developer Platform with Composable Components",
+      icon: Cpu,
+      description:
+        "Architected an Internal Developer Platform (IDP) with multiple composable, independently deployable components. Designed the platform to be modular and extensible, allowing product teams to self-serve infrastructure, CI/CD, and observability without bottlenecks.",
+      highlight: "Modular IDP with composable components",
+      tags: ["Platform Engineering", "IDP", "Microservices", "Infrastructure"],
+    },
+    {
+      category: "architecture" as const,
+      title: "Technical Point of Contact",
+      subtitle: "20+ Third-Party Integrations",
+      icon: Network,
+      description:
+        "Served as the primary technical point of contact for all architectural decision-making across the organization. Interfaced with 20+ third-party organizations for integrations, vendor evaluations, and technical partnerships, ensuring every integration met security, performance, and scalability standards.",
+      highlight: "20+ third-party organizations engaged",
+      tags: ["Technical Leadership", "Vendor Management", "API Design", "Integration Architecture"],
+    },
+    {
+      category: "architecture" as const,
+      title: "Engineering Standards & Guidance",
+      subtitle: "Organization-Wide Technical Direction",
+      icon: BookOpen,
+      description:
+        "Established and codified engineering standards, architectural decision records (ADRs), and technical guidelines that became the foundation for all teams to follow. Provided hands-on guidance to teams, conducted architecture reviews, and ensured consistency across the technology landscape.",
+      highlight: "Set the standard for the entire engineering organization",
+      tags: ["ADRs", "Engineering Standards", "Architecture Reviews", "Technical Governance"],
+    },
+    {
+      category: "leadership" as const,
+      title: "Ruby on Rails + React Team from Ground Up",
+      subtitle: "100K+ Monthly Active Users",
+      icon: Users,
+      description:
+        "Built a Ruby on Rails and React engineering team from scratch — hiring, onboarding, and establishing processes. The team now owns and operates a live product serving over 100,000 monthly active users, delivering features consistently and maintaining high availability.",
+      highlight: "100K+ monthly active users on live product",
+      tags: ["Ruby on Rails", "React", "Team Building", "Product Delivery"],
+    },
+    {
+      category: "leadership" as const,
+      title: "Platform + Product Team (Team Topologies)",
+      subtitle: "Multi-Product Delivery Organization",
+      icon: Boxes,
+      description:
+        "Built and managed a combined Platform and Product team structured according to Team Topologies principles. Established stream-aligned teams, a platform team, and enabling interactions to own the delivery of multiple products — ensuring fast flow, clear ownership, and sustainable delivery.",
+      highlight: "Team Topologies-driven multi-product delivery",
+      tags: ["Team Topologies", "Platform Teams", "Product Teams", "Organizational Design"],
+    },
+  ];
+
+  const filters: { label: string; value: StoryCategory; icon: typeof Code2 }[] = [
+    { label: "All", value: "all", icon: Filter },
+    { label: "Dev", value: "dev", icon: Code2 },
+    { label: "Architecture", value: "architecture", icon: Server },
+    { label: "Leadership", value: "leadership", icon: Users },
+  ];
+
+  const filteredStories = activeFilter === "all" ? stories : stories.filter((s) => s.category === activeFilter);
+
+  const categoryColors: Record<string, string> = {
+    dev: "bg-cyan-500/15 text-cyan-700 dark:bg-cyan-400/15 dark:text-cyan-300",
+    architecture: "bg-violet-500/15 text-violet-700 dark:bg-violet-400/15 dark:text-violet-300",
+    leadership: "bg-amber-500/15 text-amber-700 dark:bg-amber-400/15 dark:text-amber-300",
+  };
+
+  const categoryLabels: Record<string, string> = {
+    dev: "Development",
+    architecture: "Architecture",
+    leadership: "Leadership",
+  };
+
+  return (
+    <section id="stories" className="relative py-24 px-6 overflow-hidden">
+      {/* Gradient fade from previous section */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-card/50 via-card/20 to-transparent pointer-events-none" />
+
+      {/* Multi-hue background accent */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(315deg, hsl(200 80% 50% / 0.04), transparent 40%, hsl(280 55% 55% / 0.03))" }} />
+
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={stagger}
+        className="max-w-5xl mx-auto relative z-10"
+      >
+        <motion.div variants={fadeUp} className="text-center mb-12">
+          <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
+            Achievements
+          </p>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight mb-4" data-testid="text-section-stories">
+            Impact Stories
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Real outcomes from building products, designing systems, and leading teams — each story represents measurable impact.
+          </p>
+        </motion.div>
+
+        {/* Filter Buttons */}
+        <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-2 mb-10">
+          {filters.map((filter) => (
+            <Button
+              key={filter.value}
+              variant={activeFilter === filter.value ? "default" : "outline"}
+              size="sm"
+              onClick={() => setActiveFilter(filter.value)}
+              className="transition-all duration-200"
+              data-testid={`filter-stories-${filter.value}`}
+            >
+              <filter.icon className="w-4 h-4 mr-2" />
+              {filter.label}
+            </Button>
+          ))}
+        </motion.div>
+
+        {/* Stories Grid */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeFilter}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="grid md:grid-cols-2 gap-6"
+          >
+            {filteredStories.map((story, i) => (
+              <motion.div
+                key={story.title}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <Card className="overflow-visible h-full hover-elevate group">
+                  <CardContent className="p-6 h-full flex flex-col">
+                    {/* Header */}
+                    <div className="flex flex-wrap items-start gap-4 mb-4">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-md bg-primary/10 shrink-0">
+                        <story.icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-2 mb-1">
+                          <Badge className={`text-xs font-medium ${categoryColors[story.category]}`}>
+                            {categoryLabels[story.category]}
+                          </Badge>
+                        </div>
+                        <h3 className="text-base font-semibold tracking-tight leading-snug">{story.title}</h3>
+                        <p className="text-sm text-muted-foreground mt-0.5">{story.subtitle}</p>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
+                      {story.description}
+                    </p>
+
+                    {/* Highlight */}
+                    <div className="flex items-center gap-2 mb-4 p-3 rounded-md bg-primary/5 border border-primary/10">
+                      <Trophy className="w-4 h-4 text-primary shrink-0" />
+                      <span className="text-sm font-medium text-primary">{story.highlight}</span>
+                    </div>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-1.5 mt-auto">
+                      {story.tags.map((tag) => (
+                        <Badge key={tag} variant="secondary" className="text-xs no-default-active-elevate">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+      </motion.div>
+
+      {/* Gradient fade to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none" />
     </section>
   );
 }
@@ -999,9 +1247,9 @@ function ApproachSection() {
       {/* Gradient fade from previous section */}
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-card/50 via-card/30 to-transparent pointer-events-none" />
       
-      {/* Background with subtle pattern */}
+      {/* Multi-hue background pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-card/60 via-card/40 to-card/60 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(var(--primary),0.05),transparent_50%)] pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at 30% 50%, hsl(280 55% 55% / 0.05), transparent 50%), radial-gradient(circle at 80% 30%, hsl(173 60% 40% / 0.04), transparent 50%)" }} />
       
       <motion.div
         initial="hidden"
@@ -1068,8 +1316,8 @@ function ContactSection() {
       {/* Gradient fade from previous section */}
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background via-background/80 to-transparent pointer-events-none" />
       
-      {/* Subtle background accent */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-primary/4 via-transparent to-primary/3 pointer-events-none" />
+      {/* Multi-hue background accent */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, hsl(173 60% 40% / 0.04), transparent 50%, hsl(245 58% 52% / 0.04))" }} />
       
       <motion.div
         initial="hidden"
@@ -1173,9 +1421,11 @@ function ContactSection() {
 
 function Footer() {
   return (
-    <footer className="border-t py-8 px-6">
+    <footer className="relative py-8 px-6">
+      {/* Gradient top border */}
+      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, hsl(245 58% 52% / 0.3), hsl(200 80% 50% / 0.3), hsl(173 60% 40% / 0.3), transparent)" }} />
       <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-4" data-testid="text-footer">
-        <p className="text-sm text-muted-foreground" data-testid="text-footer-name">
+        <p className="text-sm font-medium gradient-text" data-testid="text-footer-name">
           Muralish Clinton
         </p>
         <p className="text-sm text-muted-foreground" data-testid="text-footer-role">
@@ -1195,6 +1445,7 @@ export default function Portfolio() {
       <StatsBar />
       <AboutSection />
       <ExpertiseSection />
+      <StoriesSection />
       <ApproachSection />
       <ContactSection />
       <Footer />
