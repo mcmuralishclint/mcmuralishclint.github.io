@@ -222,6 +222,78 @@ h1{font-size:16px;font-weight:700;letter-spacing:-.3px;color:#e8edf5}
 .mbtn.sec{background:#f1f5f9;color:#475569}.mbtn.sec:hover{background:#e2e8f0}
 .product-hint{font-size:11px;color:#94a3b8;margin-top:4px}
 
+/* ── Tablet (768–1023px) ──────────────────────────────────────────────────── */
+@media(max-width:1023px){
+  .layout{grid-template-columns:200px 1fr;gap:12px;padding:14px 16px}
+  .rsb{display:none} /* questions move below on tablet */
+  .days{grid-template-columns:repeat(2,1fr);gap:10px}
+  .wide .card-body{columns:2;column-gap:14px}
+}
+
+/* ── Mobile (≤767px — iPhone) ────────────────────────────────────────────── */
+@media(max-width:767px){
+  /* Header */
+  #hdr{padding:10px 14px 8px}
+  .hdr-top{margin-bottom:6px}
+  h1{font-size:14px}
+  .ctx-role,.ctx-sep{display:none} /* keep only product name on small screens */
+  .ctx-chip{padding:3px 8px 3px 6px;gap:5px}
+  .ctx-dot{width:6px;height:6px}
+  .btn-print{padding:4px 10px;font-size:11px}
+
+  /* Week nav — horizontally scrollable */
+  .week-nav{gap:6px;margin-bottom:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    padding-bottom:2px;scrollbar-width:none}
+  .week-nav::-webkit-scrollbar{display:none}
+  .wtabs{flex-shrink:0}
+  .wt{padding:4px 12px;font-size:11px}
+  #wtitle{display:none}
+  .arr{width:26px;height:26px;font-size:12px;flex-shrink:0}
+  #ptxt{font-size:10px}
+
+  /* Layout: single column, cards first */
+  .layout{display:flex;flex-direction:column;gap:12px;padding:12px;min-height:auto}
+  main{order:1}
+  .lsb{order:2;position:static;max-height:none;flex-direction:row;flex-wrap:wrap;gap:8px}
+  .rsb{order:3;position:static;max-height:none;display:flex;flex-direction:column;gap:8px}
+  .lsb .sq,.rsb .qgroup{flex:1 1 280px} /* fill row, wrap to next on very small */
+
+  /* Cards: single column */
+  .days{grid-template-columns:1fr;gap:8px}
+  .wide .card-body{columns:1}
+
+  /* Card content — bigger touch targets */
+  .card-hdr{padding:10px 12px 8px}
+  .card-body{padding:8px 12px 6px}
+  .task{padding:8px 0;gap:10px}
+  .task input[type=checkbox]{width:18px;height:18px;margin-top:1px;border-radius:4px}
+  .task label{font-size:13px}
+  .ftheme{font-size:13.5px}
+  .fnum{width:24px;height:24px}
+
+  /* Questions: show all, no scroll cap */
+  .qg-body{max-height:none;overflow-y:visible}
+
+  /* Week divider */
+  .wdiv{gap:7px}
+  .wd-info{font-size:11px}
+
+  /* Sidebar panels: compact */
+  .sq-hdr{padding:8px 12px;font-size:9px}
+  .sq-body{padding:5px 12px 8px}
+  .pi,.rem-item{font-size:12.5px;padding:5px 0}
+  .pi,.rem-item{padding:6px 0}
+
+  /* Modal: full-width on mobile */
+  .modal{width:calc(100vw - 32px);padding:20px}
+}
+
+/* ── Very small screens (≤374px — iPhone SE) ─────────────────────────────── */
+@media(max-width:374px){
+  .lsb{flex-direction:column}
+  .lsb .sq{flex:1 1 100%}
+}
+
 /* ── Print ────────────────────────────────────────────────────────────────── */
 @media print{
   body{background:#fff}
