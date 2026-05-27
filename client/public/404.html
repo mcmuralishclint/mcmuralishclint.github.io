@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <script>
+    // GitHub Pages SPA redirect — store the intended path, bounce to root.
+    // The main app restores the path before React mounts (see index.html).
+    sessionStorage.setItem('spa_redirect', window.location.pathname + window.location.search + window.location.hash);
+    window.location.replace('/');
+  </script>
+</head>
+<body></body>
+</html>
