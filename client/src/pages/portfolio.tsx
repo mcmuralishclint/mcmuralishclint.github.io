@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -253,7 +254,18 @@ function NavBar() {
             </Button>
           ))}
         </div>
-        <ThemeToggle />
+        <div className="flex items-center gap-2">
+          <Link href="/mc">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-muted-foreground/60 hover:text-primary text-xs font-medium tracking-wide"
+            >
+              Workspace
+            </Button>
+          </Link>
+          <ThemeToggle />
+        </div>
       </div>
     </motion.nav>
   );
