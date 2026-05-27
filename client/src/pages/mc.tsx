@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Lock, Eye, EyeOff, ArrowLeft, Shield } from "lucide-react";
 import { Link } from "wouter";
 
-const PASS = "authentiz";
+const PASS = "authentz";
 const SESSION_KEY = "mc_playbook_auth";
 
 export default function MC() {
@@ -48,7 +48,7 @@ export default function MC() {
           <span className="text-xs text-muted-foreground font-medium tracking-wide uppercase">Engineering Playbook</span>
           <div className="ml-auto flex items-center gap-1.5 text-xs text-muted-foreground">
             <Shield size={11} />
-            <span>Authentz</span>
+            <span>MC</span>
           </div>
         </div>
         {/* Full-height iframe */}
@@ -168,7 +168,7 @@ export default function MC() {
 
           {/* Footer */}
           <p className="text-center text-xs text-muted-foreground/60 mt-5">
-            Authentz · Head of Engineering · Private
+            MC · Head of Engineering · Private
           </p>
         </div>
       </motion.div>
