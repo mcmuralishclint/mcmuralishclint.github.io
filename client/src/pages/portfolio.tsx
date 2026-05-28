@@ -47,6 +47,7 @@ import {
   Network,
   BookOpen,
   Filter,
+  Award,
 } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import profileImage from "@assets/1708862676484-2_1770641756175.jpeg";
@@ -186,7 +187,7 @@ function NavBar() {
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
-    const sections = ["hero", "about", "expertise", "approach", "contact"];
+    const sections = ["hero", "about", "expertise", "stories", "certifications", "approach", "contact"];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -214,6 +215,7 @@ function NavBar() {
     { label: "About", id: "about" },
     { label: "Expertise", id: "expertise" },
     { label: "Stories", id: "stories" },
+    { label: "Certifications", id: "certifications" },
     { label: "Approach", id: "approach" },
     { label: "Contact", id: "contact" },
   ];
@@ -416,7 +418,7 @@ function StatsBar() {
       >
         <motion.div variants={fadeUp} className="grid grid-cols-2 sm:grid-cols-4 gap-8">
           <AnimatedCounter target={10} label="Years Leading" suffix="+" />
-          <AnimatedCounter target={50} label="Engineers Hired" suffix="+" />
+          <AnimatedCounter target={70} label="Engineers Hired" suffix="+" />
           <AnimatedCounter target={5} label="Teams Built" />
           <AnimatedCounter target={99} label="Uptime Target" suffix="%" />
         </motion.div>
@@ -527,164 +529,85 @@ function ExpertiseSection() {
   const expertiseData = [
     {
       number: "01",
-      title: "High-Performing Engineering Teams",
-      subtitle: "Ruby on Rails, Go, and React Delivery Organizations",
-      icon: GitBranch,
-      description:
-        "Built high-performing engineering teams around Ruby on Rails, Go, and React, establishing the hiring pipeline, technical standards, and delivery cadence needed to ship production-grade applications. This included defining role competencies by technology, structuring interviews for framework- and language-specific depth, and creating onboarding programs that accelerated time-to-first-commit across stacks.",
-      challenges: [
-        { icon: Users, text: "Talent strategy and hiring pipeline for Rails, Go, and React engineers" },
-        { icon: Code2, text: "Establishing coding standards, review processes, and best practices across stacks" },
-        { icon: Workflow, text: "Sprint cadence, delivery workflows, and agile ceremonies for cross-functional teams" },
-        { icon: Shield, text: "Security, testing culture, and production readiness across services and frontends" },
-      ],
-      outcomes: [
-        "Assembled productive, cross-functional teams capable of full-cycle delivery across Ruby on Rails, Go, and React",
-        "Reduced average onboarding time with structured, stack-aware ramp-up programs",
-        "Established a consistent deployment rhythm with reliable releases across multiple services and applications",
-        "Created a reusable playbook for standing up high-performing, framework-specific teams",
-      ],
-      skills: ["Ruby on Rails", "Go", "React", "Team Building", "Talent Strategy", "Technical Hiring", "Agile Delivery", "Code Quality"],
-      roadmap: {
-        phases: [
-          {
-            title: "Phase 1: Assessment & Strategy (Weeks 1-4)",
-            activities: [
-              "Conduct comprehensive team assessment across Ruby on Rails, Go, and React stacks",
-              "Analyze current hiring pipeline, interview processes, and technical standards",
-              "Identify gaps in team structure, skills distribution, and delivery cadence",
-              "Define target team composition and hiring roadmap for each technology stack",
-            ],
-          },
-          {
-            title: "Phase 2: Hiring & Onboarding (Weeks 5-16)",
-            activities: [
-              "Establish structured hiring pipeline with stack-specific technical assessments",
-              "Design and implement onboarding programs tailored to Ruby on Rails, Go, and React",
-              "Create role-specific competency frameworks and career progression paths",
-              "Build mentorship programs to accelerate time-to-productivity",
-            ],
-          },
-          {
-            title: "Phase 3: Standards & Processes (Weeks 17-24)",
-            activities: [
-              "Establish coding standards, review processes, and best practices for each stack",
-              "Implement consistent sprint cadence and delivery workflows across teams",
-              "Create security, testing, and production readiness frameworks",
-              "Set up metrics and KPIs to track team performance and delivery velocity",
-            ],
-          },
-          {
-            title: "Phase 4: Optimization & Scale (Weeks 25+)",
-            activities: [
-              "Continuously refine hiring and onboarding processes based on data",
-              "Scale successful practices across additional teams and projects",
-              "Build reusable playbooks for standing up new framework-specific teams",
-              "Establish culture of continuous improvement and knowledge sharing",
-            ],
-          },
-        ],
-        valueAdditions: [
-          {
-            metric: "30-50%",
-            description: "Reduction in time-to-first-commit for new engineers through structured onboarding",
-          },
-          {
-            metric: "40-60%",
-            description: "Improvement in deployment frequency with established delivery cadence",
-          },
-          {
-            metric: "25-35%",
-            description: "Increase in team productivity through optimized processes and standards",
-          },
-          {
-            metric: "50-70%",
-            description: "Faster hiring cycles with streamlined, stack-specific interview processes",
-          },
-        ],
-      },
-    },
-    {
-      number: "02",
-      title: "Building a Platform Engineering Team",
-      subtitle: "Designing the Foundation for Developer Productivity",
+      title: "Engineering Teams",
+      subtitle: "Hiring, Culture, IDPs, and Developer Infrastructure",
       icon: Boxes,
       description:
-        "Designed and built a platform engineering team responsible for creating the internal developer platform (IDP) that serves as the backbone of engineering operations. This involved defining the team's charter, selecting the technology stack, establishing service level objectives, and building the abstractions that allow product teams to ship independently and safely.",
+        "Built high-performing engineering organisations and the platform infrastructure they run on — from hiring and onboarding through to Internal Developer Platforms, CI/CD pipelines, and self-service tooling. This combined capability means product teams get both the right people and the right foundations to ship fast, reliably, and at scale.",
       challenges: [
-        { icon: Layers, text: "Internal developer platform (IDP) design and architecture" },
-        { icon: Workflow, text: "CI/CD pipeline standardization and automation" },
-        { icon: Shield, text: "Infrastructure-as-code, observability, and reliability" },
-        { icon: Target, text: "Self-service tooling and golden paths for product teams" },
+        { icon: Users, text: "Talent strategy, hiring pipeline, and onboarding programs for Rails, Go, and React engineers" },
+        { icon: Layers, text: "Internal Developer Platform (IDP) design — service catalogs, self-service workflows, and golden paths" },
+        { icon: Workflow, text: "CI/CD standardisation, GitOps pipelines, and infrastructure-as-code on GCP and AWS" },
+        { icon: Shield, text: "Observability, reliability, and production readiness across microservice ecosystems" },
       ],
       outcomes: [
-        "Launched an internal platform serving multiple product teams",
-        "Significantly reduced infrastructure provisioning time through self-service",
-        "Improved system reliability with standardized observability practices",
-        "Enabled product teams to deploy independently without platform bottlenecks",
+        "Built 30-engineer platform engineering organisation from zero at iVedha, reducing onboarding time by 40% via Platformnex IDP",
+        "Scaled engineering organisation to 40 headcount across 6 disciplines at Xigenix, lifting sprint predictability to 90%+",
+        "Reduced cloud infrastructure spend by 30% and deployment cycle time by 50% through GitOps-driven CI/CD on GCP and AWS",
+        "Established reusable hiring playbooks, competency frameworks, and onboarding programs across multiple organisations",
       ],
-      skills: ["Platform Engineering", "IDP Design", "Infrastructure as Code", "CI/CD", "Observability", "Cloud Architecture"],
+      skills: ["Ruby on Rails", "Go", "React", "Platform Engineering", "IDP Design", "Terraform", "Pulumi", "Kubernetes", "CI/CD", "GitOps", "Observability", "Team Building"],
       roadmap: {
         phases: [
           {
-            title: "Phase 1: Foundation & Charter (Weeks 1-6)",
+            title: "Phase 1: Team Assessment & IDP Architecture (Weeks 1-6)",
             activities: [
-              "Define platform engineering team charter, mission, and success metrics",
-              "Assess current infrastructure, tooling, and developer pain points",
-              "Design internal developer platform (IDP) architecture and technology stack",
-              "Establish service level objectives (SLOs) and reliability targets",
+              "Assess current team structure, hiring pipeline, and skills gaps across the organisation",
+              "Audit existing infrastructure, tooling, and developer pain points",
+              "Design Internal Developer Platform (IDP) architecture and define SLOs",
+              "Define target team composition, competency frameworks, and hiring roadmap",
             ],
           },
           {
-            title: "Phase 2: Core Platform Build (Weeks 7-20)",
+            title: "Phase 2: Hiring, Onboarding & Core IDP Build (Weeks 7-20)",
             activities: [
-              "Build self-service infrastructure provisioning and deployment pipelines",
-              "Implement standardized CI/CD workflows and golden paths",
-              "Create infrastructure-as-code templates and reusable components",
+              "Execute structured hiring pipeline with stack-specific technical assessments",
+              "Build and launch core IDP: self-service provisioning, CI/CD workflows, and IaC templates",
+              "Design and implement onboarding programs tailored to Rails, Go, and React",
               "Set up comprehensive observability, monitoring, and alerting systems",
             ],
           },
           {
-            title: "Phase 3: Developer Enablement (Weeks 21-32)",
+            title: "Phase 3: Developer Enablement & Team Standards (Weeks 21-32)",
             activities: [
-              "Launch self-service tooling and developer portals",
-              "Create documentation, runbooks, and best practice guides",
-              "Onboard initial product teams and gather feedback",
-              "Iterate on platform capabilities based on developer needs",
+              "Roll out developer portal, runbooks, and self-service tooling to product teams",
+              "Establish coding standards, architecture review gates, and ADR practices",
+              "Create coding guidelines and continuous improvement culture",
+              "Iterate on IDP capabilities and onboarding based on engineer feedback",
             ],
           },
           {
-            title: "Phase 4: Scale & Optimize (Weeks 33+)",
+            title: "Phase 4: Scale & Optimise (Weeks 33+)",
             activities: [
-              "Scale platform to serve all product teams across the organization",
-              "Continuously optimize infrastructure costs and resource utilization",
-              "Expand platform capabilities based on evolving requirements",
+              "Scale platform and hiring practices across all product teams",
+              "Continuously optimise cloud infrastructure costs and resource utilisation",
+              "Build reusable playbooks for standing up new framework-specific teams",
               "Establish platform engineering as a strategic competitive advantage",
             ],
           },
         ],
         valueAdditions: [
           {
-            metric: "80-90%",
-            description: "Reduction in infrastructure provisioning time through self-service tooling",
-          },
-          {
-            metric: "60-75%",
-            description: "Decrease in deployment failures with standardized CI/CD pipelines",
-          },
-          {
-            metric: "50-70%",
-            description: "Reduction in time-to-production for new services and applications",
+            metric: "40-60%",
+            description: "Reduction in engineer onboarding time through structured, stack-aware ramp-up programs",
           },
           {
             metric: "30-50%",
-            description: "Cost savings through optimized infrastructure and resource management",
+            description: "Cloud infrastructure cost reduction through automated provisioning and GitOps pipelines",
+          },
+          {
+            metric: "90%+",
+            description: "Sprint delivery predictability with standardised CI/CD and architecture review gates",
+          },
+          {
+            metric: "50-70%",
+            description: "Reduction in time-to-production for new services through self-service IDP tooling",
           },
         ],
       },
     },
     {
-      number: "03",
+      number: "02",
       title: "Improving Developer Efficiency",
       subtitle: "Systematic Approaches to Engineering Velocity",
       icon: Gauge,
@@ -758,6 +681,85 @@ function ExpertiseSection() {
           {
             metric: "30-40%",
             description: "Improvement in developer satisfaction scores through DX enhancements",
+          },
+        ],
+      },
+    },
+    {
+      number: "03",
+      title: "Go-to-Market Strategy",
+      subtitle: "From Initiation to Investment — Enterprise SaaS",
+      icon: Rocket,
+      description:
+        "Guided multiple Enterprise SaaS products from ideation through market validation, investor engagement, and funding — playing the full GTM stack rather than just the technical layer. This spans defining product vision and roadmap, building rapid MVPs to validate market fit, engaging angel and pre-seed investors, and driving enterprise pre-sales cycles. Delivered products from zero to launch in under 3 months, securing pre-seed and angel funding across engagements.",
+      challenges: [
+        { icon: Target, text: "Product vision, roadmap definition, and prioritisation aligned to market opportunity" },
+        { icon: Rocket, text: "Rapid MVP and prototype development to validate ideas and demonstrate live capabilities" },
+        { icon: TrendingUp, text: "Investor engagement — structuring the narrative and presenting the technical case for funding" },
+        { icon: DollarSign, text: "Enterprise pre-sales: technical validation cycles, solution demos, and deal progression" },
+      ],
+      outcomes: [
+        "Secured pre-seed and angel funding for Enterprise SaaS products guided from initiation to investment",
+        "Delivered multiple products from zero to launch in under 3 months across Enterprise SaaS markets",
+        "Built Go-based MVP prototypes within 2-week sprints, enabling live platform demos that accelerated enterprise deal progression",
+        "Aligned technology decisions with commercial stakeholders across 4 product verticals, ensuring architecture enabled growth rather than created liability",
+      ],
+      skills: ["Product Strategy", "MVP Development", "Go", "Pre-sales", "Investor Relations", "Enterprise SaaS", "Product Roadmapping", "Market Validation", "Stakeholder Alignment"],
+      roadmap: {
+        phases: [
+          {
+            title: "Phase 1: Discovery & Vision (Weeks 1-4)",
+            activities: [
+              "Market research, problem definition, and competitive landscape analysis",
+              "Define product vision, initial roadmap, and success metrics",
+              "Identify target customer segments and validate core assumptions",
+              "Align technology decisions with commercial strategy and investor narrative",
+            ],
+          },
+          {
+            title: "Phase 2: Rapid Prototyping (Weeks 5-10)",
+            activities: [
+              "Build MVP in Go or target stack within 2-week sprint cycles",
+              "Run customer and stakeholder validation sessions on live prototypes",
+              "Iterate based on feedback — refine scope, UX, and core value proposition",
+              "Prepare live demo environment for enterprise prospect engagement",
+            ],
+          },
+          {
+            title: "Phase 3: Market Entry & Pre-sales (Weeks 11-18)",
+            activities: [
+              "Develop enterprise pipeline and initiate outreach to target accounts",
+              "Run live platform demos and technical validation cycles with prospects",
+              "Establish pilots and refine product positioning based on deal feedback",
+              "Build the investor narrative anchored in traction, TAM, and technical differentiation",
+            ],
+          },
+          {
+            title: "Phase 4: Investment & Scale",
+            activities: [
+              "Present investor pitch with validated traction and commercial pipeline",
+              "Secure funding and align scale roadmap to commercial milestones",
+              "Expand engineering capacity and product surface area based on deal requirements",
+              "Transition from founder-led sales to repeatable enterprise GTM motion",
+            ],
+          },
+        ],
+        valueAdditions: [
+          {
+            metric: "<3 Months",
+            description: "Zero to launch timeline for Enterprise SaaS products with validated market fit",
+          },
+          {
+            metric: "2-Week Sprints",
+            description: "Go-based MVP prototypes built to demonstrate live capabilities to enterprise prospects",
+          },
+          {
+            metric: "Pre-seed",
+            description: "External funding secured by guiding products from initiation through investor engagement",
+          },
+          {
+            metric: "4 Verticals",
+            description: "Products aligned to commercial strategy across financial, SaaS, and platform markets",
           },
         ],
       },
@@ -1083,6 +1085,16 @@ function StoriesSection() {
     },
     {
       category: "leadership" as const,
+      title: "Scaled Engineering Org to 40 Headcount",
+      subtitle: "6 Disciplines · Financial, Strata, Blockchain Verticals",
+      icon: Users,
+      description:
+        "Scaled an engineering organisation to 40 headcount across 6 disciplines through structured hiring, OKR-linked skills training programmes, and quarterly capability assessments. Drove a 35% reduction in engineering rework by establishing architecture review gates and ADR practices, and reduced lead time from commit to production by 40% through standardised CI/CD pipelines, lifting sprint delivery predictability to 90%+ on-time roadmap completion.",
+      highlight: "35% rework reduction · 40% lead time reduction · 90%+ sprint predictability",
+      tags: ["Engineering Leadership", "OKR", "CI/CD", "ADR", "Org Scaling"],
+    },
+    {
+      category: "leadership" as const,
       title: "Platform + Product Team (Team Topologies)",
       subtitle: "Multi-Product Delivery Organization",
       icon: Boxes,
@@ -1222,6 +1234,104 @@ function StoriesSection() {
 
       {/* Gradient fade to next section */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none" />
+    </section>
+  );
+}
+
+function CertificationsSection() {
+  const certs = [
+    {
+      title: "Generative AI Leader Certification",
+      issuer: "Certification Authority",
+      year: "2026",
+    },
+    {
+      title: "Professional Cloud Architect",
+      issuer: "Google Cloud",
+      year: "2024",
+    },
+    {
+      title: "Professional Cloud Security Engineer",
+      issuer: "Google Cloud",
+      year: "2024",
+    },
+    {
+      title: "Solutions Architect Associate",
+      issuer: "AWS",
+      year: "2024",
+    },
+    {
+      title: "FinOps Certified Engineer",
+      issuer: "Linux Foundation",
+      year: "2024",
+    },
+    {
+      title: "Certified Kubernetes Application Developer",
+      issuer: "Linux Foundation (CKAD)",
+      year: "2023",
+    },
+  ];
+
+  return (
+    <section id="certifications" className="relative py-24 px-6 overflow-hidden">
+      {/* Gradient fade from previous section */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background via-background/80 to-transparent pointer-events-none" />
+
+      {/* Multi-hue background accent */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(225deg, hsl(173 60% 40% / 0.04), transparent 40%, hsl(245 58% 52% / 0.05))" }} />
+
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={stagger}
+        className="max-w-5xl mx-auto relative z-10"
+      >
+        <motion.div variants={fadeUp} className="text-center mb-12">
+          <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
+            Credentials
+          </p>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight mb-4" data-testid="text-section-certifications">
+            Certifications
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Cloud, Infrastructure, and Engineering
+          </p>
+        </motion.div>
+
+        <motion.div
+          variants={stagger}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
+        >
+          {certs.map((cert, i) => (
+            <motion.div
+              key={cert.title}
+              variants={fadeUp}
+              transition={{ delay: i * 0.08 }}
+            >
+              <Card className="overflow-visible h-full hover-elevate">
+                <CardContent className="p-5 h-full flex flex-col">
+                  <div className="flex items-start gap-3">
+                    <div className="flex items-center justify-center w-9 h-9 rounded-md bg-primary/10 shrink-0 mt-0.5">
+                      <Award className="w-4 h-4 text-primary" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-semibold leading-snug mb-1">{cert.title}</p>
+                      <p className="text-xs text-muted-foreground mb-3">{cert.issuer}</p>
+                      <Badge variant="secondary" className="text-xs no-default-active-elevate">
+                        {cert.year}
+                      </Badge>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
+
+      {/* Gradient fade to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-card/50 via-card/30 to-transparent pointer-events-none" />
     </section>
   );
 }
@@ -1379,7 +1489,7 @@ function ContactSection() {
                     </a>
                   </Button>
                   <Button variant="outline" asChild className="w-full" data-testid="link-github">
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/mcmuralishclint" target="_blank" rel="noopener noreferrer">
                       <SiGithub className="w-4 h-4 mr-2" />
                       GitHub
                     </a>
@@ -1458,6 +1568,7 @@ export default function Portfolio() {
       <AboutSection />
       <ExpertiseSection />
       <StoriesSection />
+      <CertificationsSection />
       <ApproachSection />
       <ContactSection />
       <Footer />
