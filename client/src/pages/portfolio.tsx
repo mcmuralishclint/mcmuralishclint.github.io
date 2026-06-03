@@ -417,10 +417,10 @@ function StatsBar() {
         className="max-w-4xl mx-auto relative z-10"
       >
         <motion.div variants={fadeUp} className="grid grid-cols-2 sm:grid-cols-4 gap-8">
-          <AnimatedCounter target={10} label="Years Leading" suffix="+" />
+          <AnimatedCounter target={10} label="Years Active" suffix="+" />
           <AnimatedCounter target={70} label="Engineers Hired" suffix="+" />
           <AnimatedCounter target={5} label="Teams Built" />
-          <AnimatedCounter target={99} label="Uptime Target" suffix="%" />
+          <AnimatedCounter target={0} label="Security Incidents" suffix="%" />
         </motion.div>
       </motion.div>
     </section>
@@ -487,7 +487,7 @@ function AboutSection() {
             <div className="space-y-3">
               {[
                 { icon: Users, label: "Teams Built", value: "Multiple from scratch" },
-                { icon: Rocket, label: "Focus", value: "Zero to one" },
+                { icon: Rocket, label: "Focus", value: "Pre-Seed to Series B" },
                 { icon: TrendingUp, label: "Impact", value: "Measurable outcomes" },
                 { icon: Target, label: "Approach", value: "Strategic & hands-on" },
               ].map((item, i) => (
