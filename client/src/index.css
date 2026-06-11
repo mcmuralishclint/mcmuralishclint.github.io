@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* LIGHT MODE — Vibrant Solution Architect */
+/* LIGHT MODE — Daylight console */
 :root {
   --button-outline: rgba(0,0,0, .10);
   --badge-outline: rgba(0,0,0, .05);
@@ -10,82 +10,82 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  /* Core palette — indigo-violet primary with warm off-white background */
-  --background: 240 20% 97%;
-  --foreground: 230 25% 12%;
-  --border: 230 15% 88%;
+  /* Core palette — cool paper white with deep ink foreground */
+  --background: 224 30% 97%;
+  --foreground: 228 35% 10%;
+  --border: 226 20% 87%;
   --card: 0 0% 100%;
-  --card-foreground: 230 25% 12%;
-  --card-border: 230 12% 90%;
+  --card-foreground: 228 35% 10%;
+  --card-border: 226 18% 89%;
 
   /* Sidebar */
-  --sidebar: 240 18% 95%;
-  --sidebar-foreground: 230 25% 12%;
-  --sidebar-border: 230 15% 88%;
-  --sidebar-primary: 245 58% 52%;
+  --sidebar: 224 26% 95%;
+  --sidebar-foreground: 228 35% 10%;
+  --sidebar-border: 226 20% 87%;
+  --sidebar-primary: 234 70% 52%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 230 15% 90%;
-  --sidebar-accent-foreground: 230 25% 15%;
-  --sidebar-ring: 245 58% 52%;
+  --sidebar-accent: 226 18% 90%;
+  --sidebar-accent-foreground: 228 30% 14%;
+  --sidebar-ring: 234 70% 52%;
 
   /* Popover */
   --popover: 0 0% 100%;
-  --popover-foreground: 230 25% 12%;
-  --popover-border: 230 15% 88%;
+  --popover-foreground: 228 35% 10%;
+  --popover-border: 226 20% 87%;
 
-  /* Primary — vibrant indigo-violet */
-  --primary: 245 58% 52%;
+  /* Primary — electric indigo */
+  --primary: 234 70% 52%;
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary — soft lavender */
-  --secondary: 240 20% 93%;
-  --secondary-foreground: 230 25% 18%;
+  /* Secondary */
+  --secondary: 226 22% 92%;
+  --secondary-foreground: 228 30% 16%;
 
   /* Muted */
-  --muted: 240 15% 90%;
-  --muted-foreground: 230 10% 42%;
+  --muted: 226 18% 90%;
+  --muted-foreground: 227 12% 42%;
 
-  /* Accent — teal-tinged */
-  --accent: 200 20% 92%;
-  --accent-foreground: 230 25% 18%;
+  /* Accent — cyan-tinged */
+  --accent: 199 30% 91%;
+  --accent-foreground: 228 30% 16%;
 
   /* Destructive */
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
 
   /* Input / Ring */
-  --input: 230 15% 78%;
-  --ring: 245 58% 52%;
+  --input: 226 18% 78%;
+  --ring: 234 70% 52%;
 
-  /* Charts — diverse and colorful */
-  --chart-1: 245 58% 52%;
-  --chart-2: 173 60% 40%;
-  --chart-3: 200 80% 50%;
-  --chart-4: 280 55% 55%;
+  /* Charts */
+  --chart-1: 234 70% 52%;
+  --chart-2: 173 65% 40%;
+  --chart-3: 199 85% 48%;
+  --chart-4: 262 60% 55%;
   --chart-5: 340 65% 50%;
 
   /* Typography */
-  --font-sans: Inter, sans-serif;
-  --font-serif: Playfair Display, Georgia, serif;
-  --font-mono: JetBrains Mono, monospace;
-  --radius: .5rem;
+  --font-sans: "Geist", system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --radius: .625rem;
 
-  /* Real shadows for depth */
-  --shadow-2xs: 0 1px 2px 0 hsl(230 50% 15% / 0.04);
-  --shadow-xs: 0 1px 3px 0 hsl(230 50% 15% / 0.06);
-  --shadow-sm: 0 1px 3px 0 hsl(230 50% 15% / 0.08), 0 1px 2px -1px hsl(230 50% 15% / 0.06);
-  --shadow: 0 2px 6px -1px hsl(230 50% 15% / 0.08), 0 1px 4px -2px hsl(230 50% 15% / 0.06);
-  --shadow-md: 0 4px 8px -2px hsl(230 50% 15% / 0.10), 0 2px 4px -2px hsl(230 50% 15% / 0.06);
-  --shadow-lg: 0 10px 20px -4px hsl(230 50% 15% / 0.10), 0 4px 8px -4px hsl(230 50% 15% / 0.06);
-  --shadow-xl: 0 20px 40px -8px hsl(230 50% 15% / 0.12), 0 8px 16px -6px hsl(230 50% 15% / 0.06);
-  --shadow-2xl: 0 25px 50px -12px hsl(230 50% 15% / 0.18);
+  /* Shadows */
+  --shadow-2xs: 0 1px 2px 0 hsl(228 50% 12% / 0.04);
+  --shadow-xs: 0 1px 3px 0 hsl(228 50% 12% / 0.06);
+  --shadow-sm: 0 1px 3px 0 hsl(228 50% 12% / 0.08), 0 1px 2px -1px hsl(228 50% 12% / 0.06);
+  --shadow: 0 2px 6px -1px hsl(228 50% 12% / 0.08), 0 1px 4px -2px hsl(228 50% 12% / 0.06);
+  --shadow-md: 0 4px 8px -2px hsl(228 50% 12% / 0.10), 0 2px 4px -2px hsl(228 50% 12% / 0.06);
+  --shadow-lg: 0 10px 20px -4px hsl(228 50% 12% / 0.10), 0 4px 8px -4px hsl(228 50% 12% / 0.06);
+  --shadow-xl: 0 20px 40px -8px hsl(228 50% 12% / 0.12), 0 8px 16px -6px hsl(228 50% 12% / 0.06);
+  --shadow-2xl: 0 25px 50px -12px hsl(228 50% 12% / 0.18);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
 
-  /* Gradient accent vars */
-  --gradient-from: 245 58% 52%;
-  --gradient-via: 200 80% 50%;
-  --gradient-to: 173 60% 40%;
+  /* Gradient accent vars — indigo → cyan → teal */
+  --gradient-from: 234 70% 52%;
+  --gradient-via: 199 90% 46%;
+  --gradient-to: 173 70% 40%;
 
 /* Fallback for older browsers */
   --sidebar-primary-border: hsl(var(--sidebar-primary));
@@ -104,7 +104,7 @@
   --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 }
 
-/* DARK MODE — Deep space architect */
+/* DARK MODE — Command deck (default) */
 .dark {
   --button-outline: rgba(255,255,255, .10);
   --badge-outline: rgba(255,255,255, .05);
@@ -112,61 +112,61 @@
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
 
-  /* Deep slate-blue background */
-  --background: 230 30% 7%;
-  --foreground: 220 20% 92%;
-  --border: 230 20% 16%;
-  --card: 230 25% 10%;
-  --card-foreground: 220 20% 92%;
-  --card-border: 230 18% 14%;
+  /* Near-black blue-slate base */
+  --background: 228 45% 4%;
+  --foreground: 222 25% 92%;
+  --border: 227 28% 13%;
+  --card: 228 38% 7%;
+  --card-foreground: 222 25% 92%;
+  --card-border: 227 26% 11%;
 
   /* Sidebar */
-  --sidebar: 230 25% 9%;
-  --sidebar-foreground: 220 20% 92%;
-  --sidebar-border: 230 20% 14%;
-  --sidebar-primary: 245 65% 65%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 230 15% 16%;
-  --sidebar-accent-foreground: 220 15% 88%;
-  --sidebar-ring: 245 65% 65%;
+  --sidebar: 228 40% 6%;
+  --sidebar-foreground: 222 25% 92%;
+  --sidebar-border: 227 28% 12%;
+  --sidebar-primary: 233 95% 70%;
+  --sidebar-primary-foreground: 228 45% 6%;
+  --sidebar-accent: 227 24% 13%;
+  --sidebar-accent-foreground: 222 20% 88%;
+  --sidebar-ring: 233 95% 70%;
 
   /* Popover */
-  --popover: 230 25% 12%;
-  --popover-foreground: 220 20% 92%;
-  --popover-border: 230 20% 16%;
+  --popover: 228 36% 8%;
+  --popover-foreground: 222 25% 92%;
+  --popover-border: 227 28% 13%;
 
-  /* Primary — bright vibrant indigo */
-  --primary: 245 65% 65%;
-  --primary-foreground: 0 0% 100%;
+  /* Primary — luminous indigo */
+  --primary: 233 95% 70%;
+  --primary-foreground: 228 45% 6%;
 
   /* Secondary */
-  --secondary: 230 20% 16%;
-  --secondary-foreground: 220 15% 88%;
+  --secondary: 227 26% 13%;
+  --secondary-foreground: 222 20% 88%;
 
   /* Muted */
-  --muted: 230 18% 18%;
-  --muted-foreground: 220 12% 58%;
+  --muted: 227 24% 13%;
+  --muted-foreground: 224 14% 60%;
 
-  /* Accent — teal-tinged */
-  --accent: 200 15% 16%;
-  --accent-foreground: 220 15% 88%;
+  /* Accent — cyan-tinged */
+  --accent: 200 30% 12%;
+  --accent-foreground: 222 20% 88%;
 
   /* Destructive */
-  --destructive: 0 72% 45%;
+  --destructive: 0 72% 50%;
   --destructive-foreground: 0 0% 100%;
 
   /* Input / Ring */
-  --input: 230 15% 25%;
-  --ring: 245 65% 65%;
+  --input: 227 22% 22%;
+  --ring: 233 95% 70%;
 
-  /* Charts — vivid in dark mode */
-  --chart-1: 245 65% 65%;
-  --chart-2: 173 65% 50%;
-  --chart-3: 200 85% 58%;
-  --chart-4: 280 60% 65%;
+  /* Charts */
+  --chart-1: 233 95% 70%;
+  --chart-2: 173 70% 52%;
+  --chart-3: 199 95% 62%;
+  --chart-4: 262 70% 70%;
   --chart-5: 340 70% 60%;
 
-  /* Real shadows for dark */
+  /* Shadows */
   --shadow-2xs: 0 1px 2px 0 hsl(0 0% 0% / 0.20);
   --shadow-xs: 0 1px 3px 0 hsl(0 0% 0% / 0.25);
   --shadow-sm: 0 1px 3px 0 hsl(0 0% 0% / 0.30), 0 1px 2px -1px hsl(0 0% 0% / 0.25);
@@ -176,10 +176,10 @@
   --shadow-xl: 0 20px 40px -8px hsl(0 0% 0% / 0.40), 0 8px 16px -6px hsl(0 0% 0% / 0.25);
   --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.50);
 
-  /* Gradient accent vars */
-  --gradient-from: 245 65% 65%;
-  --gradient-via: 200 85% 58%;
-  --gradient-to: 173 65% 50%;
+  /* Gradient accent vars — indigo → cyan → teal */
+  --gradient-from: 233 95% 70%;
+  --gradient-via: 199 95% 62%;
+  --gradient-to: 173 70% 52%;
 
 /* Fallback for older browsers */
   --sidebar-primary-border: hsl(var(--sidebar-primary));
@@ -203,12 +203,26 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.25);
+  }
 }
 
-/* ─── Card & surface enhancements ─── */
+/* ─── Surfaces, glows, and atmosphere ─── */
 @layer components {
   /* Glassmorphism cards */
   .glass-card {
@@ -269,19 +283,49 @@
       0 0 40px -10px hsl(var(--primary) / 0.15);
   }
 
-  /* Animated gradient mesh background */
+  /* Ambient gradient mesh background */
   .mesh-gradient {
     background:
-      radial-gradient(at 20% 30%, hsl(var(--gradient-from) / 0.12) 0%, transparent 50%),
-      radial-gradient(at 80% 20%, hsl(var(--gradient-via) / 0.10) 0%, transparent 50%),
-      radial-gradient(at 50% 80%, hsl(var(--gradient-to) / 0.08) 0%, transparent 50%);
+      radial-gradient(at 20% 30%, hsl(var(--gradient-from) / 0.10) 0%, transparent 50%),
+      radial-gradient(at 80% 20%, hsl(var(--gradient-via) / 0.08) 0%, transparent 50%),
+      radial-gradient(at 50% 80%, hsl(var(--gradient-to) / 0.07) 0%, transparent 50%);
   }
 
   .dark .mesh-gradient {
     background:
-      radial-gradient(at 20% 30%, hsl(var(--gradient-from) / 0.15) 0%, transparent 50%),
-      radial-gradient(at 80% 20%, hsl(var(--gradient-via) / 0.12) 0%, transparent 50%),
-      radial-gradient(at 50% 80%, hsl(var(--gradient-to) / 0.10) 0%, transparent 50%);
+      radial-gradient(at 20% 30%, hsl(var(--gradient-from) / 0.13) 0%, transparent 50%),
+      radial-gradient(at 80% 20%, hsl(var(--gradient-via) / 0.10) 0%, transparent 50%),
+      radial-gradient(at 50% 80%, hsl(var(--gradient-to) / 0.08) 0%, transparent 50%);
+  }
+
+  /* Faint blueprint grid for command-deck surfaces */
+  .grid-lines {
+    background-image:
+      linear-gradient(hsl(var(--foreground) / 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--foreground) / 0.035) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 75%);
+  }
+
+  /* Terminal caret blink */
+  .terminal-caret {
+    display: inline-block;
+    width: 0.55em;
+    height: 1.1em;
+    vertical-align: text-bottom;
+    background: hsl(var(--primary));
+    animation: caret-blink 1.1s steps(1) infinite;
+  }
+
+  @keyframes caret-blink {
+    50% { opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .terminal-caret {
+      animation: none;
+    }
   }
 }
 
