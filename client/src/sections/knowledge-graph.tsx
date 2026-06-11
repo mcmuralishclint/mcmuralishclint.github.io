@@ -122,7 +122,7 @@ export function KnowledgeGraphSection() {
           chapter="04"
           chapterTitle="Platform Ecosystems"
           title="Knowledge Graph"
-          subtitle="Fourteen certifications mapped as a living network — hover a node to trace how credentials, skills, and domains connect."
+          subtitle="Sixteen certifications mapped as a living network — hover a node to trace how credentials, skills, and domains connect."
           testId="text-section-knowledge"
         />
 
@@ -265,7 +265,7 @@ export function KnowledgeGraphSection() {
                 </span>
               )
             ) : (
-              <span data-testid="text-graph-readout">14 certifications // 6 domains // hover to explore</span>
+              <span data-testid="text-graph-readout">16 certifications // 6 domains // hover to explore</span>
             )}
           </div>
         </motion.div>
