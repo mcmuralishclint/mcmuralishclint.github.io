@@ -1,9 +1,9 @@
 # Muralish & Loshini — Wedding Invitations
 
-Static invitation site served by GitHub Pages. Each guest gets a personal page at `/i/<code>/`; the root page is a general, reception-only invitation.
+Static invitation site served by GitHub Pages. Each guest gets a personal page at `/i/<code>/`. Without a guest's code there is no invitation: the root page and any unknown address show a short notice with no event details.
 
 - `templates/invite.html` — the page template. Blocks marked `<!--if:both-->`, `<!--if:reception-->`, `<!--if:named-->` and `<!--if:couple-->` are kept or removed per guest.
-- `site/` — files served as they are: `invite.css`, `invite.js`, `art/`, and `index.html` (the general page, a built copy of the template).
+- `site/` — files served as they are: `invite.css`, `invite.js`, `art/`, and `index.html` / `404.html` (the notice shown without a code; keep the two the same).
 - `tools/build_invites.py` — builds `_site/` from the template and the guest list.
 - RSVP replies are posted to a Google Form.
 
@@ -33,7 +33,5 @@ Then run the "Deploy to GitHub Pages" workflow. The workflow must run `python3 t
 ```sh
 python3 -m unittest discover -s tools -p 'test_*.py'
 ```
-
-If the template changes, rebuild and copy `_site/index.html` to `site/index.html`; a test checks they match.
 
 The previous portfolio site is kept on the `portfolio` branch.
