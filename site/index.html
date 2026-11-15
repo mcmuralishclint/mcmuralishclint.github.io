@@ -11,157 +11,15 @@
 <meta property="og:url" content="https://mcmuralishclint.github.io/">
 <meta name="robots" content="noindex">
 <style>:root{color-scheme:light;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>Muralish & Loshini Reception</title>
+<title>Muralish &amp; Loshini Reception</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;1,400;1,500&display=swap">
-<style>
-/* Layout: one phone-width column centred on a paper ground. A painted temple fills the first screen; tapping pushes through its doors into a painted seaside mandapam, then the sections scroll beneath. */
-:root {
-  color-scheme: light;
-  --ground: #EFE4CD;
-  --paper: #FBF6EA;
-  --paper-deep: #F4E9D2;
-  --gold: #A97A22;
-  --gold-light: #E6C677;
-  --maroon: #7C1F2B;
-  --ink: #3E2A1C;
-  --ink-soft: #6F5847;
-  --leaf: #3C7F38;
-  --col: 480px;
-  --display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
-  --body: "Mukta", "Segoe UI", system-ui, sans-serif;
-}
-html, body { height: 100%; }
-html.gated { overflow: hidden; }
-body { background: var(--ground); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
-* { box-sizing: border-box; }
-.column { position: relative; max-width: var(--col); margin-inline: auto; background: var(--paper); box-shadow: 0 0 40px rgba(62, 42, 28, .18); overflow: hidden; }
-.wrap { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; align-items: center; text-align: center; }
-:focus-visible { outline: 3px solid var(--maroon); outline-offset: 3px; }
-
-/* ---------- Opening: the temple ---------- */
-.gate { position: fixed; z-index: 20; top: 0; bottom: 0; left: 50%; width: min(100%, var(--col)); transform: translateX(-50%); overflow: hidden; background: #CFE6F3; cursor: pointer; transition: opacity 1s ease 1s; }
-.gate img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 100%; transform-origin: 50% 69%; transition: transform 2.1s cubic-bezier(.55, 0, .35, 1); }
-.gate.is-open { opacity: 0; pointer-events: none; }
-.gate.is-open img { transform: scale(4.2); }
-.ring { --ring: clamp(108px, 21vh, 156px); position: absolute; left: 50%; top: calc(14px + env(safe-area-inset-top, 0px)); transform: translateX(-50%); width: var(--ring); height: var(--ring); border-radius: 50%; border: 2px solid var(--gold); background: rgba(251, 246, 234, .92); box-shadow: inset 0 0 0 6px rgba(251, 246, 234, .92), inset 0 0 0 7px var(--gold-light), 0 6px 24px rgba(62, 42, 28, .18); color: var(--ink); cursor: pointer; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: calc(var(--ring) * .04); font-family: var(--body); transition: opacity .4s; }
-.ring::before { content: ""; position: absolute; inset: -15px; border-radius: 50%; border: 1px solid var(--gold); opacity: .6; animation: pulse 2.4s ease-out infinite; }
-@keyframes pulse { from { transform: scale(.92); opacity: .75; } to { transform: scale(1.22); opacity: 0; } }
-.ring .mono { font-family: var(--display); font-style: italic; font-weight: 500; font-size: calc(var(--ring) * .26); line-height: 1; }
-.ring .mono b { font-weight: 500; color: var(--gold); font-size: .7em; padding: 0 2px; }
-.ring .bar { width: 34px; height: 1px; background: var(--gold); }
-.ring .tap { font-size: clamp(9px, calc(var(--ring) * .07), 11px); font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
-.gate.is-open .ring { opacity: 0; }
-
-/* ---------- Hero: the mandapam ---------- */
-.hero { position: relative; height: clamp(540px, 100vh, 860px); height: clamp(540px, 100svh, 860px); overflow: hidden; background: linear-gradient(180deg, #DCEBF5 0%, #C9E0F0 30%); }
-.hero .bg { position: absolute; left: 0; bottom: 0; width: 100%; height: 80%; object-fit: cover; object-position: 50% 100%; transform-origin: 50% 100%; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 16%); mask-image: linear-gradient(180deg, transparent 0%, #000 16%); transition: transform 2.8s cubic-bezier(.2, .6, .2, 1); }
-.hero::before { content: ""; position: absolute; inset: 0 0 48% 0; z-index: 1; background: linear-gradient(180deg, rgba(251, 246, 234, .82) 0%, rgba(251, 246, 234, .5) 60%, rgba(251, 246, 234, 0) 100%); }
-.hero .wrap { position: relative; z-index: 2; padding-top: clamp(26px, 5.5vh, 64px); gap: 7px; }
-.hero .rise { transition: opacity 1s ease, transform 1s ease; }
-.hero.pre .bg { transform: scale(1.14); }
-.hero.pre .rise { opacity: 0; transform: translateY(14px); }
-.hero .rise:nth-child(2) { transition-delay: .9s; } .hero .rise:nth-child(3) { transition-delay: 1.3s; } .hero .rise:nth-child(4) { transition-delay: 1.6s; } .hero .rise:nth-child(5) { transition-delay: 1.9s; } .hero .rise:nth-child(1) { transition-delay: .5s; }
-.eyebrow { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
-.names { margin: 0; font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(38px, 12vw, 60px); line-height: 1; color: #5B3A1E; display: flex; flex-direction: column; align-items: center; }
-.names:focus { outline: none; }
-.names .amp { font-size: .46em; color: var(--gold); line-height: 1.35; }
-.date { margin: 4px 0 0; font-family: var(--display); font-weight: 500; font-size: clamp(16px, 4.8vw, 19px); line-height: 1.25; color: #5B3A1E; white-space: nowrap; }
-.time { margin: 0; font-family: var(--display); font-style: italic; font-size: clamp(15px, 4.4vw, 17px); line-height: 1.25; color: #5B3A1E; }
-.place { margin: 2px 0 0; font-size: clamp(10px, 3vw, 12px); font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
-.cue { position: absolute; z-index: 2; left: 50%; bottom: 18px; transform: translateX(-50%); font-size: 11px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--ink); background: rgba(251, 246, 234, .85); border-radius: 999px; padding: 5px 14px; animation: bob 1.8s ease-in-out infinite alternate; }
-@keyframes bob { from { transform: translate(-50%, 0); } to { transform: translate(-50%, 6px); } }
-
-/* ---------- Sections ---------- */
-h2 { margin: 0; font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(28px, 8.4vw, 34px); line-height: 1.15; color: var(--maroon); text-wrap: balance; }
-.orn { display: flex; align-items: center; gap: 10px; }
-.orn::before, .orn::after { content: ""; width: 54px; height: 1px; background: var(--gold); }
-.orn i { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
-.blend { mix-blend-mode: multiply; }
-
-.bells { display: block; width: 100%; aspect-ratio: 1600 / 540; object-fit: cover; object-position: 50% 0; }
-.couple .wrap { padding-block: 8px 52px; gap: 18px; }
-.couple .portrait { width: min(100%, 340px); aspect-ratio: 1 / 1; object-fit: cover; border-radius: 14px; border: 1px solid var(--gold); box-shadow: 0 0 0 5px var(--paper), 0 0 0 6px var(--gold-light); margin-block: 6px; }
-.couple .who { margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(22px, 6.6vw, 26px); }
-.couple .who span { color: var(--gold); font-style: italic; padding: 0 6px; }
-.blurb { margin: 0; max-width: 32ch; color: var(--ink-soft); }
-.mock-note { margin: 0; font-size: 14px; color: var(--ink-soft); border: 1px dashed var(--gold); border-radius: 8px; padding: 6px 12px; }
-
-.countdown { background: var(--paper-deep); }
-.countdown .wrap { padding-block: 48px; gap: 20px; }
-.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(6px, 2vw, 10px); width: 100%; max-width: 400px; }
-.tile { background: var(--paper); border: 1px solid var(--gold); border-radius: 60px 60px 8px 8px; padding: 22px 4px 12px; display: flex; flex-direction: column; gap: 2px; }
-.tile b { font-family: var(--display); font-weight: 500; font-size: clamp(26px, 8vw, 36px); line-height: 1; color: var(--maroon); font-variant-numeric: tabular-nums; }
-.tile span { font-size: clamp(8.5px, 2.5vw, 11px); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
-
-.event .wrap { padding-block: 52px; gap: 20px; }
-.card { width: 100%; background: #FFFDF7; border: 1px solid var(--gold); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
-.card > img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
-.card .body { padding: 22px clamp(14px, 4.5vw, 20px); display: flex; flex-direction: column; gap: 16px; align-items: center; }
-.card h3 { margin: 0; font-family: var(--display); font-weight: 500; font-size: 26px; }
-.facts { margin: 0; width: 100%; text-align: left; border-top: 1px solid var(--gold-light); }
-.facts div { display: grid; grid-template-columns: clamp(58px, 18vw, 78px) minmax(0, 1fr); gap: 10px; padding: 12px 2px; border-bottom: 1px solid var(--gold-light); }
-.facts dt { font-size: clamp(10.5px, 3vw, 12px); letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); padding-top: 5px; }
-.facts dd { margin: 0; font-size: clamp(16px, 4.6vw, 18px); }
-.facts dd small { display: block; font-size: 15px; color: var(--ink-soft); }
-.actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-.link-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 6px 18px; border: 1px solid var(--maroon); border-radius: 999px; color: var(--maroon); text-decoration: none; font-weight: 500; font-size: 15px; }
-.link-btn:hover { background: var(--paper-deep); }
-
-.rsvp { background: var(--paper-deep); }
-.rsvp .wrap { padding-block: 52px; gap: 18px; }
-.rsvp form { width: 100%; background: var(--paper); border: 1px solid var(--gold); border-radius: 12px; padding: 22px clamp(14px, 4.5vw, 20px); display: flex; flex-direction: column; gap: 18px; text-align: left; }
-.field { display: flex; flex-direction: column; gap: 6px; border: 0; padding: 0; margin: 0; min-width: 0; }
-.field label, .field legend { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); padding: 0; }
-.field legend { margin-bottom: 6px; }
-.field input[type="text"], .field input[type="tel"], .field select, .field textarea { font: inherit; color: var(--ink); background: #fff; border: 1px solid #D9C7A3; border-radius: 8px; padding: 10px 12px; width: 100%; }
-.field textarea { resize: vertical; min-height: 84px; }
-.choice { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
-.choice label { position: relative; text-transform: none; letter-spacing: 0; font-size: 16px; color: var(--ink); }
-.choice input { position: absolute; opacity: 0; inset: 0; }
-.choice span { display: block; text-align: center; padding: 11px 6px; border: 1px solid #D9C7A3; border-radius: 8px; background: #fff; cursor: pointer; }
-.choice input:checked + span { background: var(--maroon); border-color: var(--maroon); color: var(--paper); }
-.choice input:focus-visible + span { outline: 3px solid var(--maroon); outline-offset: 3px; }
-.send { font: inherit; font-size: clamp(15px, 4.4vw, 17px); font-weight: 600; letter-spacing: .03em; min-height: 48px; color: var(--paper); background: var(--maroon); border: 0; border-radius: 999px; padding: 13px 20px; cursor: pointer; }
-.send:hover { background: #932838; }
-.send:disabled { opacity: .6; cursor: default; }
-.note { margin: 0; text-align: center; font-size: 15px; }
-.note.err { color: #A3261A; }
-.note.ok { color: var(--leaf); font-weight: 600; }
-.preview-tag { margin: 0; text-align: center; font-size: 13px; color: var(--ink-soft); }
-
-footer .wrap { padding-block: 52px 0; gap: 14px; }
-footer .sign { margin: 0; font-family: var(--display); font-style: italic; font-size: 30px; color: var(--maroon); }
-footer p { margin: 0; max-width: 34ch; color: var(--ink-soft); }
-.replay { font: inherit; font-size: 14px; background: none; border: 0; color: var(--ink-soft); text-decoration: underline; cursor: pointer; padding: 12px; }
-.closing { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 78%; margin-top: 8px; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 38%); mask-image: linear-gradient(180deg, transparent 0%, #000 38%); padding-bottom: env(safe-area-inset-bottom, 0px); }
-
-/* ---------- Petals and music ---------- */
-.petals { position: fixed; z-index: 10; top: 0; bottom: 0; left: 50%; width: min(100%, var(--col)); transform: translateX(-50%); overflow: hidden; pointer-events: none; }
-.petals i { position: absolute; top: -24px; border-radius: 80% 0 80% 0; opacity: .75; animation: fall linear infinite; }
-@keyframes fall { from { transform: translate3d(0, -4vh, 0) rotate(0deg); } to { transform: translate3d(46px, 108vh, 0) rotate(380deg); } }
-.music { position: fixed; z-index: 15; right: max(calc(16px + env(safe-area-inset-right, 0px)), calc(50vw - var(--col) / 2 + 16px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--gold); background: var(--maroon); color: var(--gold-light); cursor: pointer; padding: 0; display: grid; place-items: center; box-shadow: 0 4px 14px rgba(62, 42, 28, .3); }
-.music svg { width: 24px; height: 24px; }
-.music .slash { display: none; }
-.music.off { background: var(--paper); color: var(--ink-soft); }
-.music.off .slash { display: block; }
-
-@media (max-height: 640px) {
-  .hero .bg { height: 70%; }
-  .hero .wrap { padding-top: 22px; gap: 5px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .gate, .gate img, .hero .bg, .hero .rise { transition-duration: .01s; transition-delay: 0s; }
-  .gate.is-open img, .hero.pre .bg { transform: none; }
-  .ring::before, .cue { animation: none; }
-  .petals { display: none; }
-}
-</style>
+<link rel="stylesheet" href="/invite.css">
 </head>
-<body>
+<body data-countdown="2027-02-13T19:00:00+05:30" data-invite="Reception only" data-guest="">
 
 <div class="gate" id="gate">
-  <img src="art/temple.jpg" alt="A painted temple entrance with a tall gopuram, banana trees and a lotus pond">
+  <img src="/art/temple.jpg" alt="A painted temple entrance with a tall gopuram, banana trees and a lotus pond">
   <button class="ring" id="open" type="button" aria-label="Open the invitation">
     <span class="mono">M<b>&amp;</b>L</span>
     <span class="bar"></span>
@@ -179,25 +37,31 @@ footer p { margin: 0; max-width: 34ch; color: var(--ink-soft); }
 
 <main class="column" id="invite">
   <section class="hero" id="hero">
-    <img class="bg" src="art/mandapam.jpg" alt="A painted wedding mandapam hung with flower garlands, with the sea behind it">
+    <img class="bg" src="/art/mandapam.jpg" alt="A painted wedding mandapam hung with flower garlands, with the sea behind it">
     <div class="wrap">
+      
+      
       <p class="eyebrow rise">The wedding reception of</p>
       <h1 class="names rise" id="names" tabindex="-1"><span>Muralish</span><span class="amp">&amp;</span><span>Loshini</span></h1>
+      
+      
       <p class="date rise">Saturday, 13 February 2027</p>
       <p class="time rise">7 pm onwards</p>
       <p class="place rise">Pegasus Reef Hotel, Wattala</p>
+      
     </div>
     <span class="cue" aria-hidden="true">Scroll</span>
   </section>
 
   <section class="couple">
-    <img class="bells blend" src="art/bells.jpg" alt="Brass temple bells hanging from a garland of mango leaves and marigolds">
+    <img class="bells blend" src="/art/bells.jpg" alt="Brass temple bells hanging from a garland of mango leaves and marigolds">
     <div class="wrap">
       <p class="eyebrow">Beginning of forever</p>
       <h2>Meet the couple</h2>
-      <img class="portrait" src="art/couple-portrait-ghibli.jpg" alt="Illustrated portrait of Muralish and Loshini">
+      <img class="portrait" src="/art/couple-portrait-ghibli.jpg" alt="Illustrated portrait of Muralish and Loshini">
       <p class="who">Muralish<span>&amp;</span>Loshini</p>
       <p class="blurb">Together with our families, we invite you to celebrate with us.</p>
+      
     </div>
   </section>
 
@@ -216,10 +80,11 @@ footer p { margin: 0; max-width: 34ch; color: var(--ink-soft); }
 
   <section class="event">
     <div class="wrap">
+      
       <p class="eyebrow">The celebration</p>
       <h2>Wedding Reception</h2>
       <div class="card">
-        <img src="art/reception.jpg" alt="A painted outdoor reception by the sea at sunset, with a floral arch, string lights and guest tables">
+        <img src="/art/reception.jpg" alt="A painted outdoor reception by the sea at sunset, with a floral arch, string lights and guest tables">
         <div class="body">
           <dl class="facts">
             <div><dt>Date</dt><dd>Saturday, 13 February 2027</dd></div>
@@ -243,7 +108,7 @@ footer p { margin: 0; max-width: 34ch; color: var(--ink-soft); }
       <form id="rsvp" novalidate>
         <div class="field">
           <label for="guest-name">Guest name</label>
-          <input type="text" id="guest-name" name="name" autocomplete="name">
+          <input type="text" id="guest-name" name="name" autocomplete="name" value="">
         </div>
         <div class="field">
           <label for="guest-phone">Contact number</label>
@@ -252,10 +117,14 @@ footer p { margin: 0; max-width: 34ch; color: var(--ink-soft); }
         <fieldset class="field">
           <legend>Attendance</legend>
           <div class="choice">
-            <label><input type="radio" id="attend-yes" name="attending" value="yes" checked><span>Accepts with pleasure</span></label>
-            <label><input type="radio" id="attend-no" name="attending" value="no"><span>Declines with regret</span></label>
+            
+            
+            <label><input type="radio" name="attending" value="yes" data-events="Reception" checked><span>Accepts with pleasure</span></label>
+            <label><input type="radio" name="attending" value="no" data-events="None"><span>Declines with regret</span></label>
+            
           </div>
         </fieldset>
+        
         <div class="field">
           <label for="guest-message" id="message-label">Your blessings</label>
           <textarea id="guest-message" name="message"></textarea>
@@ -275,185 +144,10 @@ footer p { margin: 0; max-width: 34ch; color: var(--ink-soft); }
       <p class="sign">Muralish &amp; Loshini</p>
       <button class="replay" id="replay" type="button">See the opening again</button>
     </div>
-    <img class="closing" src="art/temple.jpg" alt="">
+    <img class="closing" src="/art/temple.jpg" alt="">
   </footer>
 </main>
 
-<script>
-(function () {
-  var root = document.documentElement;
-  var gate = document.getElementById('gate');
-  var hero = document.getElementById('hero');
-  var names = document.getElementById('names');
-  var musicBtn = document.getElementById('music');
-  var petals = document.getElementById('petals');
-  var timer;
-
-  /* ----- Falling petals ----- */
-  function startPetals() {
-    if (petals.childNodes.length) return;
-    var cols = ['#F4A7B9', '#F7C6D0', '#F2C14E', '#FBE3A1', '#F08BAA'], i;
-    for (i = 0; i < 14; i++) {
-      var p = document.createElement('i'), s = 8 + Math.random() * 7, d = 9 + Math.random() * 8;
-      p.style.left = (Math.random() * 96) + '%';
-      p.style.width = s + 'px'; p.style.height = s + 'px';
-      p.style.background = cols[i % cols.length];
-      p.style.animationDuration = d + 's';
-      p.style.animationDelay = (-Math.random() * d) + 's';
-      petals.appendChild(p);
-    }
-  }
-
-  /* ----- Music: a gentle plucked melody over a drone, made in the browser ----- */
-  var AC, master, bus, droneBus, musicOn = false;
-  var SA = 293.66, RATIOS = [1, 9 / 8, 5 / 4, 3 / 2, 5 / 3, 2, 9 / 4, 5 / 2], BEAT = 0.82;
-  var MELODY = [[2,1],[3,1],[4,1],[5,2],[4,1],[3,1],[2,1], [1,1],[2,1],[3,2],[2,1],[1,1],[0,2],
-                [2,1],[3,1],[4,1],[5,1],[6,2],[5,1],[4,1], [3,1],[4,1],[3,1],[2,1],[1,1],[0,3]];
-  var DRONE = [SA * 0.75, SA, SA, SA / 2];
-
-  function tone(dest, type, freq, t, dur, vol, from) {
-    var o = AC.createOscillator(), g = AC.createGain();
-    o.type = type;
-    if (from) { o.frequency.setValueAtTime(from, t); o.frequency.exponentialRampToValueAtTime(freq, t + 0.09); }
-    else { o.frequency.setValueAtTime(freq, t); }
-    g.gain.setValueAtTime(0.0001, t);
-    g.gain.exponentialRampToValueAtTime(vol, t + 0.02);
-    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-    o.connect(g); g.connect(dest);
-    o.start(t); o.stop(t + dur + 0.05);
-  }
-  function bell(t) {
-    [1, 2, 2.76, 5.4].forEach(function (r, i) { tone(bus, 'sine', 620 * r, t, 2.8 - i * 0.5, 0.14 / (i + 1)); });
-  }
-  function scheduleLoop(t0) {
-    if (AC.state !== 'running') { setTimeout(function () { scheduleLoop(Math.max(t0, AC.currentTime + 0.2)); }, 1000); return; }
-    var t = t0, prev = null, b;
-    MELODY.forEach(function (n) {
-      var f = SA * RATIOS[n[0]], len = n[1] * BEAT;
-      tone(bus, 'triangle', f, t, len + 1.2, 0.2, prev && n[1] > 1 ? prev : null);
-      tone(bus, 'sine', f * 2, t, len * 0.7 + 0.4, 0.045);
-      prev = f; t += len;
-    });
-    for (b = 0; b < 32; b++) { tone(droneBus, 'sawtooth', DRONE[b % 4], t0 + b * BEAT, 3.4, 0.07); }
-    setTimeout(function () { scheduleLoop(t0 + 32 * BEAT); }, Math.max(200, (t0 + 32 * BEAT - AC.currentTime - 1) * 1000));
-  }
-  function initAudio() {
-    var Ctx = window.AudioContext || window.webkitAudioContext;
-    if (!Ctx) return false;
-    AC = new Ctx();
-    master = AC.createGain(); master.gain.value = 0.0001;
-    var comp = AC.createDynamicsCompressor();
-    master.connect(comp); comp.connect(AC.destination);
-    bus = AC.createGain(); bus.connect(master);
-    var delay = AC.createDelay(1), fb = AC.createGain(), wet = AC.createGain();
-    delay.delayTime.value = 0.36; fb.gain.value = 0.3; wet.gain.value = 0.26;
-    bus.connect(delay); delay.connect(fb); fb.connect(delay); delay.connect(wet); wet.connect(master);
-    var lp = AC.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 760;
-    droneBus = AC.createGain(); droneBus.connect(lp); lp.connect(bus);
-    return true;
-  }
-  function setMusic(on, withBell) {
-    if (on && !AC) {
-      if (!initAudio()) { musicBtn.hidden = true; return; }
-      if (withBell) bell(AC.currentTime + 0.05);
-      scheduleLoop(AC.currentTime + (withBell ? 1.4 : 0.2));
-    }
-    musicOn = on;
-    musicBtn.classList.toggle('off', !on);
-    musicBtn.setAttribute('aria-pressed', String(on));
-    musicBtn.setAttribute('aria-label', on ? 'Turn music off' : 'Turn music on');
-    if (!AC) return;
-    if (on) AC.resume();
-    master.gain.cancelScheduledValues(AC.currentTime);
-    master.gain.setTargetAtTime(on ? 0.55 : 0.0001, AC.currentTime, on ? 0.5 : 0.12);
-  }
-  musicBtn.addEventListener('click', function () { setMusic(!musicOn, false); });
-  document.addEventListener('visibilitychange', function () {
-    if (!AC) return;
-    if (document.hidden) AC.suspend(); else AC.resume();
-  });
-
-  /* ----- Opening ----- */
-  function openGate() {
-    if (gate.classList.contains('is-open')) return;
-    if (!musicOn) setMusic(true, true);
-    gate.classList.add('is-open');
-    hero.classList.remove('pre');
-    startPetals();
-    timer = setTimeout(function () {
-      gate.hidden = true;
-      musicBtn.hidden = false;
-      root.classList.remove('gated');
-      names.focus({ preventScroll: true });
-    }, 2300);
-  }
-  function showGate() {
-    clearTimeout(timer);
-    window.scrollTo(0, 0);
-    hero.classList.add('pre');
-    gate.hidden = false;
-    void gate.offsetWidth;
-    gate.classList.remove('is-open');
-    root.classList.add('gated');
-  }
-  if (location.hash === '#invite') { gate.hidden = true; musicBtn.hidden = false; startPetals(); }
-  else { root.classList.add('gated'); hero.classList.add('pre'); }
-  gate.addEventListener('click', openGate);
-  document.getElementById('replay').addEventListener('click', showGate);
-
-  /* ----- Countdown to 7 pm on the day, in Sri Lanka time ----- */
-  var target = Date.parse('2027-02-13T19:00:00+05:30');
-  function pad(n) { return n < 10 ? '0' + n : String(n); }
-  function tick() {
-    var s = Math.max(0, Math.floor((target - Date.now()) / 1000));
-    document.getElementById('cd-d').textContent = Math.floor(s / 86400);
-    document.getElementById('cd-h').textContent = pad(Math.floor(s % 86400 / 3600));
-    document.getElementById('cd-m').textContent = pad(Math.floor(s % 3600 / 60));
-    document.getElementById('cd-s').textContent = pad(s % 60);
-  }
-  tick();
-  setInterval(tick, 1000);
-
-  /* ----- Reply form: each reply is sent to the couple's Google Form ----- */
-  var RSVP_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeSf7_k83dWliRXXPCNr0aiDu_SR93IUtWOClDDlS98rGoxMg/formResponse';
-  var FIELDS = { name: 'entry.1853683081', phone: 'entry.397292606', attending: 'entry.443300009', message: 'entry.674018825' };
-  var form = document.getElementById('rsvp');
-  var note = document.getElementById('rsvp-note');
-  var sendBtn = document.getElementById('send');
-  var messageLabel = document.getElementById('message-label');
-  function say(kind, text) { note.hidden = false; note.className = 'note ' + kind; note.textContent = text; }
-  form.addEventListener('change', function () {
-    var coming = form.attending.value === 'yes';
-    messageLabel.textContent = coming ? 'Your blessings' : 'A note for the couple';
-    sendBtn.textContent = coming ? 'Send blessings and RSVP' : 'Send reply';
-  });
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var name = form.name.value.trim();
-    if (!name) {
-      say('err', 'Please enter your name so we know who is replying.');
-      form.name.focus();
-      return;
-    }
-    var coming = form.attending.value === 'yes';
-    var body = new URLSearchParams();
-    body.append(FIELDS.name, name);
-    body.append(FIELDS.phone, form.phone.value.trim() || '-');
-    body.append(FIELDS.attending, coming ? 'Accepts' : 'Declines');
-    body.append(FIELDS.message, form.message.value.trim() || '-');
-    sendBtn.disabled = true;
-    say('', 'Sending your reply…');
-    fetch(RSVP_URL, { method: 'POST', mode: 'no-cors', body: body }).then(function () {
-      say('ok', coming
-        ? 'Thank you, ' + name + '. Your reply is in, and we look forward to seeing you.'
-        : 'Thank you for letting us know, ' + name + '. We will miss you.');
-      form.reset();
-      form.dispatchEvent(new Event('change'));
-    }).catch(function () {
-      say('err', 'Your reply could not be sent. Check your connection and try again.');
-    }).then(function () { sendBtn.disabled = false; });
-  });
-})();
-</script>
+<script src="/invite.js"></script>
 </body>
 </html>
