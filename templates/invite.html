@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="{{description}}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{og_title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:image" content="https://mcmuralishclint.github.io/art/reception.jpg">
+<meta property="og:url" content="{{url}}">
+<meta name="robots" content="noindex">
+<style>:root{color-scheme:light;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>{{title}}</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;1,400;1,500&display=swap">
+<link rel="stylesheet" href="/invite.css">
+</head>
+<body data-countdown="{{countdown}}" data-invite="{{invite_label}}" data-guest="{{names}}">
+
+<div class="gate" id="gate">
+  <img src="/art/temple.jpg" alt="A painted temple entrance with a tall gopuram, banana trees and a lotus pond">
+  <button class="ring" id="open" type="button" aria-label="Open the invitation">
+    <span class="mono">M<b>&amp;</b>L</span>
+    <span class="bar"></span>
+    <span class="tap">Tap to open</span>
+  </button>
+  <!--if:named--><p class="dear">Dear {{names}}</p><!--/if:named-->
+</div>
+
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<button class="music off" id="music" type="button" aria-pressed="false" aria-label="Turn music on" hidden>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/><path class="slash" d="M3 3l18 18"/>
+  </svg>
+</button>
+
+<main class="column" id="invite">
+  <section class="hero" id="hero">
+    <img class="bg" src="/art/mandapam.jpg" alt="A painted wedding mandapam hung with flower garlands, with the sea behind it">
+    <div class="wrap">
+      <p class="lead rise">{{hero_lead}}</p>
+      <h1 class="names rise" id="names" tabindex="-1"><span>Muralish</span><span class="amp">&amp;</span><span>Loshini</span></h1>
+      <!--if:both-->
+      <p class="date rise">12 &amp; 13 February 2027</p>
+      <p class="place rise">Colombo &middot; Wattala</p>
+      <!--/if:both-->
+      <!--if:reception-->
+      <p class="date rise">Saturday, 13 February 2027</p>
+      <p class="time rise">7 pm onwards</p>
+      <p class="place rise">Pegasus Reef Hotel, Wattala</p>
+      <!--/if:reception-->
+    </div>
+    <span class="cue" aria-hidden="true">Scroll</span>
+  </section>
+
+  <section class="couple">
+    <img class="bells blend" src="/art/bells.jpg" alt="Brass temple bells hanging from a garland of mango leaves and marigolds">
+    <div class="wrap">
+      <p class="eyebrow">Beginning of forever</p>
+      <h2>Meet the couple</h2>
+      <img class="portrait" src="/art/couple-portrait-ghibli.jpg" alt="Illustrated portrait of Muralish and Loshini">
+      <p class="who">Muralish<span>&amp;</span>Loshini</p>
+      <p class="blurb">Together with our families, we invite you to celebrate with us.</p>
+      <!--if:named--><p class="invited">{{invited_line}}</p><!--/if:named-->
+    </div>
+  </section>
+
+  <section class="countdown">
+    <div class="wrap">
+      <p class="eyebrow">Join the celebration</p>
+      <h2>Counting down the days</h2>
+      <div class="tiles">
+        <div class="tile"><b id="cd-d">90</b><span>Days</span></div>
+        <div class="tile"><b id="cd-h">00</b><span>Hours</span></div>
+        <div class="tile"><b id="cd-m">00</b><span>Minutes</span></div>
+        <div class="tile"><b id="cd-s">00</b><span>Seconds</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="event">
+    <div class="wrap">
+      <!--if:both-->
+      <p class="eyebrow">Day one &middot; Friday</p>
+      <h2>Wedding Ceremony</h2>
+      <div class="card">
+        <img src="/art/temple.jpg" alt="A painted temple entrance with a tall gopuram, banana trees and a lotus pond">
+        <div class="body">
+          <dl class="facts">
+            <div><dt>Date</dt><dd>Friday, 12 February 2027</dd></div>
+            <div><dt>Time</dt><dd>9.00 am onwards</dd></div>
+            <div><dt>Venue</dt><dd>Sri Ponnambalavaneswarar Kovil<small>Kovil hall, Kochchikade, Colombo 13</small></dd></div>
+          </dl>
+          <div class="actions">
+            <a class="link-btn" href="https://share.google/7IAPaESFHGiWixkGK" target="_blank" rel="noopener">View location map</a>
+            <a class="link-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Muralish+%26+Loshini+Wedding+Ceremony&dates=20270212T033000Z/20270212T063000Z&location=Sri+Ponnambalavaneswarar+Kovil,+Kochchikade,+Colombo+13" target="_blank" rel="noopener">Add to Google Calendar</a>
+          </div>
+        </div>
+      </div>
+      <p class="eyebrow next">Day two &middot; Saturday</p>
+      <!--/if:both-->
+      <!--if:reception--><p class="eyebrow">The celebration</p><!--/if:reception-->
+      <h2>Wedding Reception</h2>
+      <div class="card">
+        <img src="/art/reception.jpg" alt="A painted outdoor reception by the sea at sunset, with a floral arch, string lights and guest tables">
+        <div class="body">
+          <dl class="facts">
+            <div><dt>Date</dt><dd>Saturday, 13 February 2027</dd></div>
+            <div><dt>Time</dt><dd>7.00 pm onwards</dd></div>
+            <div><dt>Venue</dt><dd>Pegasus Reef Hotel<small>Wattala, Sri Lanka</small></dd></div>
+            <div><dt>Setting</dt><dd>Outdoors<small>The reception is held in the open air, by the sea.</small></dd></div>
+          </dl>
+          <div class="actions">
+            <a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Pegasus+Reef+Hotel+Wattala" target="_blank" rel="noopener">View location map</a>
+            <a class="link-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Muralish+%26+Loshini+Wedding+Reception&dates=20270213T133000Z/20270213T173000Z&location=Pegasus+Reef+Hotel,+Wattala" target="_blank" rel="noopener">Add to Google Calendar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rsvp">
+    <div class="wrap">
+      <p class="eyebrow">Your presence is a blessing</p>
+      <h2>Guest RSVP</h2>
+      <form id="rsvp" novalidate>
+        <div class="field">
+          <label for="guest-name">Guest name</label>
+          <input type="text" id="guest-name" name="name" autocomplete="name" value="{{names}}">
+        </div>
+        <div class="field">
+          <label for="guest-phone">Contact number</label>
+          <input type="tel" id="guest-phone" name="phone" autocomplete="tel">
+        </div>
+        <fieldset class="field">
+          <legend>Attendance</legend>
+          <div class="choice">
+            <!--if:both-->
+            <label><input type="radio" name="attending" value="both" data-events="Wedding and reception" checked><span>Wedding and reception</span></label>
+            <label><input type="radio" name="attending" value="wedding" data-events="Wedding only"><span>Wedding only</span></label>
+            <label><input type="radio" name="attending" value="reception" data-events="Reception only"><span>Reception only</span></label>
+            <label><input type="radio" name="attending" value="no" data-events="None"><span>Declines with regret</span></label>
+            <!--/if:both-->
+            <!--if:reception-->
+            <label><input type="radio" name="attending" value="yes" data-events="Reception" checked><span>Accepts with pleasure</span></label>
+            <label><input type="radio" name="attending" value="no" data-events="None"><span>Declines with regret</span></label>
+            <!--/if:reception-->
+          </div>
+        </fieldset>
+        <!--if:couple-->
+        <fieldset class="field" id="party-field">
+          <legend>Number attending</legend>
+          <div class="choice">
+            <label><input type="radio" name="party" value="2" checked><span>Both of us</span></label>
+            <label><input type="radio" name="party" value="1"><span>One of us</span></label>
+          </div>
+        </fieldset>
+        <!--/if:couple-->
+        <div class="field">
+          <label for="guest-message" id="message-label">Your blessings</label>
+          <textarea id="guest-message" name="message"></textarea>
+        </div>
+        <button class="send" id="send" type="submit">Send blessings and RSVP</button>
+        <p class="note" id="rsvp-note" role="status" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p class="eyebrow">With gratitude</p>
+      <h2>Thank you</h2>
+      <p>Your presence is the greatest blessing. We can't wait to celebrate with you.</p>
+      <div class="orn"><i></i></div>
+      <p class="sign">Muralish &amp; Loshini</p>
+      <button class="replay" id="replay" type="button">See the opening again</button>
+    </div>
+    <img class="closing" src="/art/temple.jpg" alt="">
+  </footer>
+</main>
+
+<script src="/invite.js"></script>
+</body>
+</html>
