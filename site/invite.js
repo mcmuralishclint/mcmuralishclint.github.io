@@ -135,8 +135,7 @@
 
   /* ----- Reply form: each reply is sent to the couple's Google Form ----- */
   var RSVP_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeSf7_k83dWliRXXPCNr0aiDu_SR93IUtWOClDDlS98rGoxMg/formResponse';
-  /* The last three are sent only once their Google Form questions exist and their ids are filled in here. */
-  var FIELDS = { name: 'entry.1853683081', phone: 'entry.397292606', attending: 'entry.443300009', message: 'entry.674018825', invitation: '', events: '', party: '' };
+  var FIELDS = { name: 'entry.1853683081', phone: 'entry.397292606', attending: 'entry.443300009', message: 'entry.674018825', invitation: 'entry.1601133860', events: 'entry.775814580', party: 'entry.1585353819' };
   var form = document.getElementById('rsvp');
   var note = document.getElementById('rsvp-note');
   var sendBtn = document.getElementById('send');
