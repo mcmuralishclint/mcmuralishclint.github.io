@@ -66,7 +66,7 @@ class RenderTests(unittest.TestCase):
         self.assertEqual(page.count('name="attending"'), 4)
 
     def test_reception_pages_hold_no_wedding_details(self):
-        for page in (b.render(TEMPLATE, self.guests[1]), b.render(TEMPLATE, self.guests[2]), b.render(TEMPLATE)):
+        for page in (b.render(TEMPLATE, self.guests[1]), b.render(TEMPLATE, self.guests[2])):
             for text in WEDDING_ONLY_TEXT:
                 self.assertNotIn(text, page)
             self.assertEqual(page.count('name="attending"'), 2)
@@ -79,13 +79,16 @@ class RenderTests(unittest.TestCase):
             for text in WEDDING_ONLY_TEXT:
                 self.assertNotIn(text, shared)
 
-    def test_headcount_only_for_couples_and_greeting_only_when_named(self):
+    def test_headcount_only_for_couples(self):
         self.assertNotIn("party-field", b.render(TEMPLATE, self.guests[1]))
         self.assertIn("party-field", b.render(TEMPLATE, self.guests[2]))
-        general = b.render(TEMPLATE)
-        self.assertNotIn("Dear ", general)
-        self.assertNotIn("party-field", general)
-        self.assertIn('data-guest=""', general)
+
+    def test_pages_without_a_code_give_nothing_away(self):
+        # The root page and the not-found page must not work as an invitation.
+        for name in ("index.html", "404.html"):
+            page = (b.ROOT / "site" / name).read_text(encoding="utf-8")
+            for text in WEDDING_ONLY_TEXT + ["February", "2027", "Pegasus", "Wattala", "<form", "invite.js"]:
+                self.assertNotIn(text, page)
 
     def test_names_are_escaped(self):
         guest = {"code": "abcd", "names": '<script>"x"</script>', "events": "reception", "party": 1}
@@ -94,7 +97,7 @@ class RenderTests(unittest.TestCase):
         self.assertIn("&lt;script&gt;&quot;x&quot;&lt;/script&gt;", page)
 
     def test_nothing_left_unfilled(self):
-        for page in (b.render(TEMPLATE), b.render(TEMPLATE, self.guests[0])):
+        for page in (b.render(TEMPLATE, self.guests[0]), b.render(TEMPLATE, self.guests[1])):
             self.assertNotIn("{{", page)
             self.assertNotIn("<!--if:", page)
 
@@ -107,14 +110,10 @@ class BuildTests(unittest.TestCase):
             out = Path(folder) / "out"
             b.build(guests, out)
             self.assertTrue((out / "index.html").is_file())
+            self.assertTrue((out / "404.html").is_file())
             self.assertTrue((out / "invite.js").is_file())
             self.assertTrue((out / "art" / "temple.jpg").is_file())
             self.assertEqual(sorted(p.name for p in (out / "i").iterdir()), sorted(g["code"] for g in guests))
-
-    def test_committed_general_page_matches_the_template(self):
-        # site/index.html keeps the root link working if the site is ever served without the build step.
-        committed = (b.ROOT / "site" / "index.html").read_text(encoding="utf-8")
-        self.assertEqual(committed, b.render(TEMPLATE), "Run tools/build_invites.py and copy _site/index.html to site/index.html")
 
     def test_build_refuses_rows_without_codes(self):
         with tempfile.TemporaryDirectory() as folder:
