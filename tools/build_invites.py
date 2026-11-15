@@ -110,6 +110,9 @@ def render(template, guest=None):
         "description": WEDDING_DESCRIPTION if both else RECEPTION_DESCRIPTION,
         "countdown": "2027-02-12T09:00:00+05:30" if both else "2027-02-13T19:00:00+05:30",
         "invite_label": "Wedding and reception" if both else "Reception only",
+        "hero_lead": "The wedding reception of" if not guest
+        else "You are invited to the wedding & reception of" if both
+        else "You are invited to the wedding reception of",
         "invited_line": "You are invited to the wedding ceremony and the reception."
         if both else "You are invited to the wedding reception.",
     }

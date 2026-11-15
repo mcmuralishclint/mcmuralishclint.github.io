@@ -60,7 +60,7 @@ class RenderTests(unittest.TestCase):
 
     def test_wedding_page_has_both_events_and_four_choices(self):
         page = b.render(TEMPLATE, self.guests[0])
-        for text in ("Dear Asha &amp; Ravi", "Wedding Ceremony", "Wedding Reception", "Kochchikade",
+        for text in ("Dear Asha &amp; Ravi", "You are invited to the wedding &amp; reception of", "Wedding Ceremony", "Wedding Reception", "Kochchikade",
                      "Pegasus Reef Hotel", 'data-countdown="2027-02-12T09:00:00+05:30"', 'id="party-field"'):
             self.assertIn(text, page)
         self.assertEqual(page.count('name="attending"'), 4)
@@ -70,6 +70,7 @@ class RenderTests(unittest.TestCase):
             for text in WEDDING_ONLY_TEXT:
                 self.assertNotIn(text, page)
             self.assertEqual(page.count('name="attending"'), 2)
+            self.assertIn("wedding reception of</p>", page)
             self.assertIn('data-countdown="2027-02-13T19:00:00+05:30"', page)
 
     def test_shared_files_hold_no_wedding_details(self):
