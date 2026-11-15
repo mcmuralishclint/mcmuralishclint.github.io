@@ -2,13 +2,14 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
+  actions: write
 
 concurrency:
   group: "pages"
@@ -24,10 +25,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Test the build tool
+        run: python3 -m unittest discover -s tools -p 'test_*.py'
+
+      - name: Build the invitation pages
+        env:
+          GUESTS_CSV: ${{ secrets.GUESTS_CSV }}
+        run: python3 tools/build_invites.py --out _site
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: _site
+          retention-days: 1
 
       - name: Deploy to GitHub Pages
         id: deployment
